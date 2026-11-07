@@ -299,16 +299,20 @@
     ],
     "breakpoints": [
       {
+        "name": "tiny",
+        "value": "max-width: 360px"
+      },
+      {
         "name": "narrow",
         "value": "max-width: 420px"
       },
       {
         "name": "stack",
-        "value": "max-width: 860px"
+        "value": "max-width: 1100px"
       },
       {
         "name": "short-desktop",
-        "value": "min-width: 861px and max-height: 820px"
+        "value": "min-width: 1101px and max-height: 820px"
       }
     ],
     "theme": {

@@ -197,7 +197,7 @@ Hierarchy comes from one condensed face pushed through weight and tracking: tigh
 
 Side gutters are fluid (clamp 1rem–4rem). The front is a two-column grid: the lede and proof on the left, the hanging badge in a column capped at 30rem on the right, spanning the full first viewport (min-height 100svh minus the 3rem strap). The back sheet is inset from the viewport edge (clamp 0.5–2rem) with content capped at 68rem; sections are spaced by clamp(3rem, 8vw, 6rem). Lists (access zones, certifications) are ruled tables: a 2px light-ink rule on top, 1px hairline rows, 1.25rem row padding; access rows are a 12rem term column plus description.
 
-Below 860px the front collapses to one column, the badge centres under the lede at full width up to 30rem, the lanyard swings to a shallow 9° diagonal, the strap drops the name and spreads its links, and access rows stack. On short desktops (861px+, height ≤ 820px) the badge compacts so the Send button stays in the first viewport. Below 420px the badge and its full-bleed strips tighten to 1.1rem insets.
+Below 1100px the front collapses to one column: the lede runs full width, the badge centres under it up to 30rem with a gap above it that grows with viewport width (1.5rem + 8vw) so the shallow 9° lanyard clears the proof line, the strap drops the name and spreads its links, and access rows stack. On short desktops (1101px+, height ≤ 820px) the badge compacts so its contact block stays in the first viewport. Below 420px the badge and its full-bleed strips tighten to 1.1rem insets. Below 360px the strap tightens its tracking and gaps and the zone bands wrap to a 2×2 grid. Display headings never use non-breaking spaces, so they always wrap inside the viewport.
 
 ## Elevation & Depth
 
@@ -242,7 +242,7 @@ Rounded-rectangle PVC (1.4rem corners) for the badge and the back sheet's top ed
 - Sticky slate band, 3rem tall, teal uppercase labels at 700 / 0.14em. Hover: 4px double underline. Current section: solid 4px underline and light-ink text. Mobile: name hidden, links spread full width.
 
 ### Signature: the hanging badge
-- Slot, steel clip, foil strip (the one reflective accent: a rainbow holographic gradient plus a moving white glint driven by pointer position), name, position, zone bands, the message form, and a light-ink barcode generated from the name. Enters with a single 1.6s swing (cubic-bezier(0.22, 1, 0.36, 1)) from a pivot above the card; reduced motion removes the swing and the foil tracking.
+- Slot, steel clip, foil strip (the one reflective accent: a quiet teal-and-silver foil gradient (#8e9ba5, #c4cfd5, #6fd3c3, #3f8f85, #b7c3ca) plus a soft white glint at 60% driven by pointer position), name, position, zone bands, the contact block (the message form once PUBLIC_WEB3FORMS_KEY is set; until then a 'Get in touch' block with Copy email and LinkedIn, never a disabled form), and a light-ink barcode generated from the name. Enters with a single 1.6s swing (cubic-bezier(0.22, 1, 0.36, 1)) from a pivot above the card; reduced motion removes the swing and the foil tracking.
 
 ## Do's and Don'ts
 
