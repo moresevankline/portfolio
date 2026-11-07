@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Wall Planner sketch</title>
+<style>
+:root{--lam:#f7f8f6;--grid:#c9cdd0;--red:#e2231a;--yel:#ffd400;--grn:#00a651;--blu:#0072ce;--ink:#16181a}
+*{box-sizing:border-box;margin:0}
+body{width:1440px;height:900px;overflow:hidden;background:var(--lam);font-family:Arial,sans-serif;color:var(--ink)}
+.top{display:flex;justify-content:space-between;align-items:flex-end;padding:30px 48px 18px;border-bottom:4px solid var(--blu)}
+h1{font-size:64px;line-height:.95;font-weight:800;text-transform:uppercase}
+.sub{font-size:22px;margin-top:8px}
+.leg{display:flex;gap:22px;font-size:16px;font-weight:700}
+.leg span{display:flex;align-items:center;gap:8px}
+.d{width:22px;height:22px;border-radius:50%;display:inline-block}
+.yr{display:grid;grid-template-columns:90px repeat(31,1fr);margin:16px 48px 0;border-top:1px solid var(--grid);border-left:1px solid var(--grid)}
+.yr div{height:34px;border-right:1px solid var(--grid);border-bottom:1px solid var(--grid);display:flex;align-items:center;justify-content:center;font-size:12px}
+.m{font-weight:800;justify-content:flex-start!important;padding-left:10px;font-size:14px!important;background:#e8ebec}
+.form{position:absolute;right:48px;bottom:36px;width:520px;background:#fff;border:3px solid var(--ink);padding:18px}
+.form .f{border-bottom:2px solid var(--ink);height:46px;font-size:18px;color:#777;padding-top:12px}
+.form .b{margin-top:14px;background:var(--red);color:#fff;font-weight:800;font-size:20px;padding:14px;text-align:center;text-transform:uppercase}
+</style></head><body>
+<div class="top"><div><h1>Evan Kline Mores</h1><div class="sub">Web developer · SAP SuccessFactors</div></div>
+<div class="leg"><span><i class="d" style="background:var(--blu)"></i>Web</span><span><i class="d" style="background:var(--grn)"></i>EC Core</span><span><i class="d" style="background:var(--yel)"></i>Time Off</span><span><i class="d" style="background:var(--red)"></i>Reporting</span></div></div>
+<div class="yr" id="yr"></div>
+<div class="form"><div style="font-weight:800;font-size:14px;letter-spacing:.1em">BOOK A DAY</div><div class="f">Your email</div><div class="f">What are you building?</div><div class="b">Send</div></div>
+<script>
+const m=["JAN","FEB","MAR","APR","MAY","JUN","JUL","AUG","SEP","OCT","NOV","DEC"],c=["--blu","--grn","--yel","--red"];let h="";
+m.forEach((x,i)=>{h+=`<div class="m">${x}</div>`;for(let d=1;d<=31;d++){const dot=(d*7+i*5)%11===0?`<i class="d" style="width:16px;height:16px;background:var(${c[(d+i)%4]})"></i>`:"";h+=`<div>${dot}</div>`}});
+document.getElementById("yr").innerHTML=h;
+</script>
+</body></html>

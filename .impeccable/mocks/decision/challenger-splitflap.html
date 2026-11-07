@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Split-Flap sketch</title>
+<style>
+:root{--flap:#111111;--paint:#f2f2f2;--amber:#ffb000;--steel:#8a8f94}
+*{box-sizing:border-box;margin:0}
+body{width:1440px;height:900px;overflow:hidden;background:var(--steel);font-family:"Arial Narrow",Arial,sans-serif}
+.board{position:absolute;left:80px;top:70px;right:80px;bottom:70px;background:#1c1c1c;padding:30px}
+.hd{display:flex;justify-content:space-between;color:var(--paint);border-bottom:2px solid #444;padding-bottom:14px}
+.hd h1{font-size:56px;text-transform:uppercase;letter-spacing:.04em}
+.hd span{font-size:22px;color:var(--amber);align-self:flex-end}
+.row{display:grid;grid-template-columns:120px 1fr 260px;gap:14px;margin-top:16px;align-items:center}
+.cells{display:flex;gap:4px}
+.cells i{width:46px;height:62px;background:var(--flap);color:var(--paint);font:700 40px "Arial Narrow",Arial;display:flex;align-items:center;justify-content:center;font-style:normal;border-bottom:2px solid #000}
+.t{color:var(--amber);font:700 32px "Courier New",monospace}
+.st{color:var(--paint);font-size:22px;text-transform:uppercase;letter-spacing:.1em}
+.form{margin-top:26px;display:flex;gap:10px}
+.form .f{flex:1;background:var(--flap);color:#bdbdbd;font-size:22px;padding:18px}
+.form .b{background:var(--amber);color:#111;font-weight:700;font-size:22px;padding:18px 34px;text-transform:uppercase}
+</style></head><body>
+<div class="board">
+  <div class="hd"><h1>Evan Kline Mores</h1><span>Web developer · SAP SuccessFactors</span></div>
+  <div id="rows"></div>
+  <div class="form"><div class="f">Now boarding: you@company.com</div><div class="b">Board</div></div>
+</div>
+<script>
+const r=[["01","WEB","ON TIME"],["02","EC CORE","ON TIME"],["03","TIME OFF","ON TIME"],["04","REPORTING","ON TIME"],["05","CERTIFIED","PLATFORM 1"]];
+document.getElementById("rows").innerHTML=r.map(([t,w,s])=>`<div class="row"><div class="t">${t}</div><div class="cells">${[...w.padEnd(12)].map(c=>`<i>${c}</i>`).join("")}</div><div class="st">${s}</div></div>`).join("");
+</script>
+</body></html>

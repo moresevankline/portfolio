@@ -1,0 +1,7 @@
+node_modules/
+dist/
+.astro/
+.env
+.impeccable/config.local.json
+.impeccable/hook.cache.json
+.impeccable/review/

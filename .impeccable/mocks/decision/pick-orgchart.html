@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Org Chart sketch</title>
+<style>
+:root{--paper:#ffffff;--ink:#141414;--red:#e4002b;--blue:#0057b8;--teal:#00838b}
+*{box-sizing:border-box;margin:0}
+body{width:1440px;height:900px;overflow:hidden;background:var(--paper);font-family:Arial,sans-serif;color:var(--ink);position:relative}
+.top{position:absolute;left:470px;top:60px;width:500px;border:3px solid var(--ink);padding:22px 26px}
+.top h1{font-size:54px;line-height:.95;text-transform:uppercase}
+.top p{font-size:20px;margin-top:8px}
+svg{position:absolute;inset:0}
+.n{position:absolute;top:420px;width:250px;height:150px;color:#fff;padding:16px}
+.n small{font-size:13px;letter-spacing:.14em;font-weight:700}
+.n b{display:block;font-size:30px;margin-top:8px}
+.contact{position:absolute;left:470px;top:660px;width:500px;border:3px solid var(--red);padding:16px}
+.contact .f{border-bottom:2px solid var(--ink);height:40px;color:#4a4a4a;padding-top:10px;font-size:17px}
+.contact .b{margin-top:12px;background:var(--red);color:#fff;font-weight:700;padding:12px;text-align:center;font-size:18px}
+</style></head><body>
+<svg width="1440" height="900"><g stroke="#141414" stroke-width="2" fill="none"><path d="M720 232V330M185 330H1255M185 330V420M545 330V420M905 330V420M1255 330V420M720 570V660"/></g></svg>
+<div class="top"><h1>Evan Kline Mores</h1><p>Web developer · SAP SuccessFactors</p></div>
+<div class="n" style="left:60px;background:var(--ink)"><small>REPORTS TO EVAN</small><b>Web</b></div>
+<div class="n" style="left:420px;background:var(--blue)"><small>REPORTS TO EVAN</small><b>EC Core</b></div>
+<div class="n" style="left:780px;background:var(--teal)"><small>REPORTS TO EVAN</small><b>Time Off</b></div>
+<div class="n" style="left:1130px;background:var(--red)"><small>REPORTS TO EVAN</small><b>Reporting</b></div>
+<div class="contact"><div class="f">you@company.com</div><div class="b">Contact Evan</div></div>
+</body></html>

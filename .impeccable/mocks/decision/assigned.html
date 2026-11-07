@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Time Card sketch</title>
+<style>
+:root{--stock:#c8dcb4;--ink:#1a1a17;--red:#a31b17;--ribbon:#4b3a78;--rack:#3d4a45;--rack2:#33403b}
+*{box-sizing:border-box;margin:0}
+body{width:1440px;height:900px;overflow:hidden;background:var(--rack);font-family:"Arial Narrow",Arial,sans-serif;color:var(--ink)}
+.slot{position:absolute;left:250px;right:250px;top:0;height:46px;background:#2a3531;border-bottom:3px solid #1f2825}
+.card{position:absolute;left:300px;top:28px;width:840px;height:920px;background:var(--stock);box-shadow:0 2px 0 #9fb68f}
+.hd{padding:26px 40px 14px;border-bottom:3px solid var(--ink);display:grid;grid-template-columns:1fr auto;gap:8px 40px}
+.lbl{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--red);font-weight:700}
+.name{font-size:76px;line-height:.9;font-weight:700;letter-spacing:-.01em;text-transform:uppercase}
+.pos{font-size:24px;margin-top:6px}
+.no{text-align:right}.no b{font-size:40px;font-family:"Courier New",monospace;color:var(--ribbon)}
+.row{display:grid;grid-template-columns:56px 120px 1fr 150px;border-bottom:1px solid #6c7d60;height:62px;align-items:center}
+.row>*{padding:0 14px}
+.n{font-family:"Courier New",monospace;font-weight:700;color:var(--red);font-size:18px;border-right:1px solid #6c7d60;height:100%;display:flex;align-items:center}
+.k{font-size:13px;letter-spacing:.12em;text-transform:uppercase;font-weight:700}
+.v{font-size:22px}
+.st{font-family:"Courier New",monospace;font-size:26px;color:var(--ribbon);font-weight:700;text-align:right}
+.st.red{color:var(--red)}
+.form{grid-template-columns:56px 120px 1fr 150px;height:124px}
+.field{border:2px solid var(--ink);height:84px;background:#d9e8c9;font-size:18px;padding:10px 12px;color:#55604d}
+.punch{background:var(--ink);color:var(--stock);font-size:20px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;height:84px;display:flex;align-items:center;justify-content:center;margin-right:14px}
+.stamp{position:absolute;right:56px;top:150px;transform:rotate(-6deg);border:4px solid var(--red);color:var(--red);font:700 30px "Courier New",monospace;padding:6px 14px;opacity:.9}
+</style></head><body>
+<div class="slot"></div>
+<div class="card">
+  <div class="hd">
+    <div><div class="lbl">Employee</div><div class="name">Evan Kline Mores</div><div class="pos">Web developer · SAP SuccessFactors</div></div>
+    <div class="no"><div class="lbl">Card No.</div><b>0001</b></div>
+  </div>
+  <div class="stamp">IN 09:41</div>
+  <div class="row form"><div class="n">01</div><div class="k">Message</div><div class="field">Tell me what you're building…</div><div class="punch">Punch in</div></div>
+  <div class="row"><div class="n">02</div><div class="k">Web</div><div class="v">Front ends that are fast, accessible, and maintainable</div><div class="st">WEB</div></div>
+  <div class="row"><div class="n">03</div><div class="k">EC Core</div><div class="v">Employee Central data model and configuration</div><div class="st">SF</div></div>
+  <div class="row"><div class="n">04</div><div class="k">Time Off</div><div class="v">Leave types, accruals, and approvals</div><div class="st">SF</div></div>
+  <div class="row"><div class="n">05</div><div class="k">Reporting</div><div class="v">People-data reports people actually use</div><div class="st">SF</div></div>
+  <div class="row"><div class="n">06</div><div class="k">Certified</div><div class="v">Certifications listed here</div><div class="st red">✓</div></div>
+  <div class="row"><div class="n">07</div><div class="k">Contact</div><div class="v">email@example.com</div><div class="st">OUT</div></div>
+</div>
+</body></html>

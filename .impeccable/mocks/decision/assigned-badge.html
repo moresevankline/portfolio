@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Staff Badge sketch</title>
+<style>
+:root{--strap:#f26a1b;--pvc:#f6f7f5;--ink:#121417;--ec:#00877a;--to:#ffc20e;--rep:#5b3fa0}
+*{box-sizing:border-box;margin:0}
+body{width:1440px;height:900px;overflow:hidden;background:var(--strap);font-family:"Arial Narrow",Arial,sans-serif;color:var(--ink);position:relative}
+.strap{position:absolute;left:-200px;top:330px;width:1300px;height:64px;background:var(--ink);transform:rotate(-24deg);color:var(--strap);font:700 22px Arial;letter-spacing:.3em;display:flex;align-items:center;padding-left:300px;white-space:nowrap}
+.clip{position:absolute;left:878px;top:62px;width:70px;height:46px;background:#9aa1a6;border-radius:6px}
+.badge{position:absolute;left:720px;top:100px;width:520px;height:760px;background:var(--pvc);border-radius:22px;overflow:hidden}
+.slot{width:120px;height:18px;background:var(--strap);border-radius:9px;margin:22px auto 0}
+.photo{width:210px;height:250px;background:#d5d8d6;margin:24px 0 0 40px;display:flex;align-items:flex-end;padding:10px;font-size:13px;color:#3d4246}
+.foil{position:absolute;left:270px;top:72px;width:210px;height:30px;background:#c9d1d6}
+.name{position:absolute;left:270px;top:130px;width:220px;font-size:52px;line-height:.92;font-weight:700;text-transform:uppercase}
+.pos{position:absolute;left:270px;top:300px;font-size:18px;letter-spacing:.08em;text-transform:uppercase;font-weight:700}
+.zones{position:absolute;left:0;right:0;top:360px;display:grid;grid-template-columns:repeat(4,1fr)}
+.zones div{height:92px;padding:12px;font-size:16px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:#fff}
+.zones b{display:block;font-size:34px;margin-top:6px}
+.mail{position:absolute;left:40px;right:40px;top:500px}
+.mail label{font-size:14px;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+.mail .row{display:flex;margin-top:8px}
+.mail .f{flex:1;border:3px solid var(--ink);height:60px;font-size:20px;padding:16px;color:#3d4246}
+.mail .b{background:var(--ink);color:var(--pvc);font-size:20px;font-weight:700;padding:0 26px;display:flex;align-items:center;text-transform:uppercase}
+.bar{position:absolute;left:40px;right:40px;bottom:40px;height:60px;background:repeating-linear-gradient(90deg,var(--ink) 0 3px,transparent 3px 6px,var(--ink) 6px 8px,transparent 8px 13px)}
+.copy{position:absolute;left:90px;top:120px;width:560px;color:var(--ink)}
+.copy h2{font-size:30px;line-height:1.1}
+</style></head><body>
+<div class="copy"><h2>Web developer who knows how HR runs on SAP SuccessFactors.</h2></div>
+<div class="strap">WEB · EC CORE · TIME OFF · REPORTING · WEB · EC CORE</div>
+<div class="clip"></div>
+<div class="badge">
+  <div class="slot"></div>
+  <div class="photo">Your photo</div>
+  <div class="foil"></div>
+  <div class="name">Evan Kline Mores</div>
+  <div class="pos">Web developer</div>
+  <div class="zones">
+    <div style="background:var(--ink)">Zone<b>WEB</b></div>
+    <div style="background:var(--ec)">Zone<b>EC</b></div>
+    <div style="background:var(--to);color:var(--ink)">Zone<b>TIME</b></div>
+    <div style="background:var(--rep)">Zone<b>REP</b></div>
+  </div>
+  <div class="mail"><label>Request a call back</label><div class="row"><div class="f">you@company.com</div><div class="b">Send</div></div></div>
+  <div class="bar"></div>
+</div>
+</body></html>
