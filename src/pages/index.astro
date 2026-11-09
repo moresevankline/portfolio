@@ -61,7 +61,7 @@ const barWidth = x;
 
       <div class="hang">
         <div class="lanyard" aria-hidden="true">
-          <span>Web · EC Core · Time Off · Reporting · Web · EC Core ·</span>
+          <span>Web · EC Core · Time Off · Reporting · Web · EC Core · Time Off · Reporting</span>
         </div>
         <svg class="clip" viewBox="0 0 64 56" aria-hidden="true">
           <path d="M14 20h36a6 6 0 0 1 6 6v8a6 6 0 0 1-6 6H40v16H24V40H14a6 6 0 0 1-6-6v-8a6 6 0 0 1 6-6Z" fill="#9aa2a8" />
@@ -403,7 +403,8 @@ const barWidth = x;
     background: var(--strap); color: var(--accent);
     display: flex; align-items: center; justify-content: flex-end; overflow: hidden;
     font-weight: 700; letter-spacing: 0.3em; text-transform: uppercase; white-space: nowrap;
-    padding-right: 3rem;
+    /* End the print where the strap leaves the badge: the badge hides (half its width + 1rem) along the 45° strap. */
+    padding-right: calc((50% + 1rem) * 1.42 + 1rem);
   }
   .clip { position: absolute; left: 50%; top: 0; width: 4rem; translate: -50% 0; z-index: 2; }
 
@@ -523,7 +524,7 @@ const barWidth = x;
     .front { grid-template-columns: minmax(0, 1fr); grid-template-rows: none; min-height: 0; padding-top: 2rem; }
     .lede { margin-top: 0; max-width: none; }
     .hang { grid-column: 1; grid-row: auto; margin-top: calc(1.5rem + 8vw); padding-top: 3.25rem; max-width: 30rem; width: 100%; justify-self: center; }
-    .lanyard { transform: rotate(9deg); width: 120vw; }
+    .lanyard { transform: rotate(9deg); width: 120vw; padding-right: 3rem; }
     .strap-name { display: none; }
     .strap ul { width: 100%; justify-content: space-between; }
     .access-row { grid-template-columns: 1fr; gap: 0.6rem; }
