@@ -298,13 +298,20 @@ const barWidth = x;
     const io = new IntersectionObserver((entries) => {
       for (const en of entries) {
         if (!en.isIntersecting) continue;
-        const el = en.target as HTMLElement;
-        const sec = el.dataset.section!;
+        const sec = (en.target as HTMLElement).dataset.section!;
         links.forEach((a) => mark(a, a.dataset.nav === sec));
-        if (el.classList.contains('access-row')) zoneLinks.forEach((a) => mark(a, a.dataset.zone === el.id));
       }
     }, { rootMargin: '-45% 0px -50% 0px' });
-    document.querySelectorAll('section[data-section], .access-row').forEach((s) => io.observe(s));
+    document.querySelectorAll('section[data-section]').forEach((s) => io.observe(s));
+    // Zones mark the highest access row in the top half under the strap (where a clicked row lands); none there clears them.
+    const rows = [...document.querySelectorAll<HTMLElement>('.access-row')];
+    const inBand = new Set<Element>();
+    const zoneIo = new IntersectionObserver((entries) => {
+      for (const en of entries) en.isIntersecting ? inBand.add(en.target) : inBand.delete(en.target);
+      const top = rows.find((r) => inBand.has(r));
+      zoneLinks.forEach((a) => mark(a, a.dataset.zone === top?.id));
+    }, { rootMargin: '-80px 0px -50% 0px' });
+    rows.forEach((r) => zoneIo.observe(r));
   </script>
 </body>
 </html>
@@ -441,7 +448,7 @@ const barWidth = x;
   }
   .zone:hover { border-top-style: double; border-top-color: currentColor; }
   .zone:focus-visible { outline-offset: -6px; outline-color: currentColor; }
-  .zone[aria-current] { border-bottom-color: currentColor; }
+  .zone[aria-current] { text-decoration: underline solid 4px; text-underline-offset: 0.3em; }
   .tone-ink { background: var(--ink); color: var(--pvc); }
   .tone-ec { background: var(--ec); color: var(--on-zone); }
   .tone-to { background: var(--to); color: var(--ground); }

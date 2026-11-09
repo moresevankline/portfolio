@@ -233,7 +233,7 @@ Rounded-rectangle PVC (1.4rem corners) for the badge and the back sheet's top ed
 - Uppercase 800 label at 0.1em with a 4px solid underline rule; hover turns it to a 6px double rule. External links carry a small inline SVG arrow and a screen-reader "opens in a new tab".
 
 ### Zone bands
-- Four equal square cells full-bleed across the badge, min-height 4.5rem, label bottom-aligned. Hover: double rule on top. Current (while its access row is being read): solid 6px rule on the bottom. Focus: dashed outline inset 6px in the band's own text colour.
+- Four equal square cells full-bleed across the badge, min-height 4.5rem, label bottom-aligned. Hover: double rule on top. Current (while its access row is being read): a solid 4px rule under the label, inside the band (a bottom-edge rule in the Web band's dark ink merged into the card and read as a shorter band); cleared once the Access section leaves view. Focus: dashed outline inset 6px in the band's own text colour.
 
 ### Tags
 - The zone colour (with its zone's text colour) as a small inline chip (0.3rem corners, uppercase 800 at 0.08em), used as the access-row term.
