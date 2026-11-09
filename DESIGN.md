@@ -142,7 +142,7 @@ components:
 
 The whole site is one staff badge hanging from a lanyard. The page is a graphite ground; a single dark printed-PVC card, one step lighter than the ground, hangs from a steel clip on a slate woven strap printed in teal, and the back of the site is the reverse of that card, a second sheet of the same PVC rising from the bottom with rounded top corners. Four access-zone bands (light ink, teal, muted gold, slate) are the only spot colours; everything else is light ink on graphite or light ink on PVC. The mood is calm and enterprise: dark, low-chroma, with one teal voice.
 
-Hierarchy comes from one condensed face pushed through weight and tracking: tight, heavy, near-solid display lines against wide-tracked uppercase labels, the way a badge printer sets a name over a job title. States are drawn in line, not hue: a double rule on hover, a dashed punch outline on focus and disabled, a solid rule when current. Motion is physical and rare: the badge swings once from its clip and settles, and the foil strip catches light under the pointer.
+Hierarchy comes from one condensed face pushed through weight and tracking: tight, heavy, near-solid display lines against wide-tracked uppercase labels, the way a badge printer sets a name over a job title. States are drawn in line, not hue: a double rule on hover, a dashed punch outline on focus and disabled, a solid rule when current. Motion is physical and rare: the badge swings once from its clip and settles, and the foil strip catches light under the pointer. Behind the front, faint ink particles (0.6–2px, 12–52% alpha, about one per 12,000px², max 140) drift slowly upward on a canvas and shift a little with the pointer, bigger dots more, for depth. The loop pauses off screen and in hidden tabs; reduced motion draws them once and holds them still.
 
 **Key Characteristics:**
 - Dark graphite ground (color-scheme: dark); light ink and dark PVC carry everything else, teal is the one accent.
@@ -207,7 +207,7 @@ Below 1100px the front collapses to one column: the lede runs full width, the ba
 
 ## Elevation & Depth
 
-Flat print everywhere except the hanging card. The badge is the only lifted object, separated from graphite by its one-step-lighter PVC and a soft neutral black hanging shadow; the punched slot (graphite showing through) is the only inset. Everything on the back sheet is flat and ruled.
+Flat print everywhere except the hanging card. The front's graphite carries a particle canvas (`.particles`, z-index -1 inside an isolated `.front`): randomly scattered dots, never a grid or lines, since fine repeating stripes strained the owner's eyes. The badge is the only lifted object, separated from graphite by its one-step-lighter PVC and a soft neutral black hanging shadow; the punched slot (graphite showing through) is the only inset. Everything on the back sheet is flat and ruled.
 
 ### Shadow Vocabulary
 - **Hanging card** (`box-shadow: 0 1.5rem 3rem -1rem rgb(0 0 0 / 0.55), 0 0.25rem 0.5rem rgb(0 0 0 / 0.3)`): The front badge only.

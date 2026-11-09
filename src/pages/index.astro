@@ -55,6 +55,7 @@ const barWidth = x;
 
   <main>
     <section class="front" id="top" data-section="top" aria-label="Introduction">
+      <canvas class="particles" aria-hidden="true"></canvas>
       <p class="lede">Web developer who knows how HR runs on SAP SuccessFactors.</p>
       <p class="proof">Certified in SuccessFactors Employee Central Core and SAP Generative AI. <a href="#certified">See certifications</a></p>
 
@@ -228,6 +229,67 @@ const barWidth = x;
       });
     }
 
+    // Particles behind the front: faint dots drift up; the pointer shifts them a little, bigger dots more (depth).
+    const canvas = document.querySelector<HTMLCanvasElement>('.particles');
+    const front = document.querySelector<HTMLElement>('.front');
+    if (canvas && front) {
+      const ctx = canvas.getContext('2d')!;
+      const still = matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const ink = getComputedStyle(document.documentElement).getPropertyValue('--ink').trim() || '#ecedee';
+      type Dot = { x: number; y: number; r: number; a: number; vx: number; vy: number };
+      let w = 0, h = 0, dots: Dot[] = [], frame = 0, onScreen = true;
+      const pointer = { x: 0, y: 0, tx: 0, ty: 0 };
+      const makeDot = (): Dot => ({
+        x: Math.random() * w, y: Math.random() * h,
+        r: 0.6 + Math.random() * 1.4, a: 0.12 + Math.random() * 0.4,
+        vx: (Math.random() - 0.5) * 0.1, vy: -(0.04 + Math.random() * 0.1),
+      });
+      const draw = () => {
+        ctx.clearRect(0, 0, w, h);
+        ctx.fillStyle = ink;
+        for (const d of dots) {
+          ctx.globalAlpha = d.a;
+          ctx.beginPath();
+          ctx.arc(d.x + pointer.x * d.r * 8, d.y + pointer.y * d.r * 8, d.r, 0, Math.PI * 2);
+          ctx.fill();
+        }
+      };
+      const resize = () => {
+        const dpr = Math.min(devicePixelRatio || 1, 2);
+        w = front.clientWidth; h = front.clientHeight;
+        canvas.width = Math.round(w * dpr); canvas.height = Math.round(h * dpr);
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        const want = Math.min(140, Math.round((w * h) / 12000));
+        while (dots.length < want) dots.push(makeDot());
+        dots.length = want;
+        draw();
+      };
+      const tick = () => {
+        pointer.x += (pointer.tx - pointer.x) * 0.05;
+        pointer.y += (pointer.ty - pointer.y) * 0.05;
+        for (const d of dots) {
+          d.x = (d.x + d.vx + w) % w;
+          d.y += d.vy;
+          if (d.y < -4) { d.y = h + 4; d.x = Math.random() * w; }
+        }
+        draw();
+        frame = requestAnimationFrame(tick);
+      };
+      // Run only while the front is on screen and the tab is visible.
+      const sync = () => {
+        cancelAnimationFrame(frame);
+        if (!still && onScreen && !document.hidden) frame = requestAnimationFrame(tick);
+      };
+      new ResizeObserver(resize).observe(front);
+      new IntersectionObserver(([e]) => { onScreen = e.isIntersecting; sync(); }).observe(front);
+      document.addEventListener('visibilitychange', sync);
+      if (!still) front.addEventListener('pointermove', (e) => {
+        const r = front.getBoundingClientRect();
+        pointer.tx = ((e.clientX - r.left) / r.width - 0.5) * 2;
+        pointer.ty = ((e.clientY - r.top) / r.height - 0.5) * 2;
+      });
+    }
+
     // Strap names the section in view; zones mark the one being read.
     const links = [...document.querySelectorAll<HTMLAnchorElement>('[data-nav]')];
     const zoneLinks = [...document.querySelectorAll<HTMLAnchorElement>('[data-zone]')];
@@ -322,6 +384,9 @@ const barWidth = x;
   }
   .proof { grid-column: 1; margin-top: 1.5rem; max-width: 34ch; font-weight: 600; }
   .proof a { font-weight: 800; white-space: nowrap; display: inline-block; padding-block: 0.6rem; margin-block: -0.6rem; }
+  /* Particles: faint dots drifting behind the front's content (drawn by the script). */
+  .front { isolation: isolate; }
+  .particles { position: absolute; inset: 0; z-index: -1; width: 100%; height: 100%; pointer-events: none; }
   .hang { grid-column: 2; grid-row: 1 / span 3; position: relative; padding-top: 2.75rem; }
 
   .lanyard {
