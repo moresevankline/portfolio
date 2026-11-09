@@ -173,6 +173,9 @@ Hierarchy comes from one condensed face pushed through weight and tracking: tigh
 - **Placeholder Grey** (placeholder): Field placeholders only (5.8:1 on graphite).
 - **Status Green / Status Red** (ok / err): Form status text only, never surfaces (9.4:1 / 8:1 on PVC).
 
+### Light theme
+A sun/moon button at the right end of the strap switches between dark (the default) and light. The first visit follows the system setting, and keeps following it live until the visitor clicks; a click is saved in localStorage, and an inline head script applies it before first paint. The browser-bar colours for both themes live once, as data attributes on the theme-color meta tag. Light swaps only the surface tokens: ground #e6e8eb, PVC #fbfbfc, ink #16191c, ink-2 #555c64, hair #d3d7dc, placeholder #6b7179, ok #1e7a4c, err #b42318. The strap and lanyard stay dark fabric in both themes, so strap text and the strap's focus ring use the fixed strap-ink (#ecedee); text on teal and gold uses the fixed on-accent graphite (#121416). Zone colours never change. The particles redraw in the current ink.
+
 ### Named Rules
 **The Four Zones Rule.** Light ink, teal, gold and slate belong to the four access zones and nothing else. Each zone keeps its colour wherever it appears (band on the badge, tag on the back).
 
@@ -201,7 +204,7 @@ Hierarchy comes from one condensed face pushed through weight and tracking: tigh
 
 ## Layout
 
-Side gutters are fluid (clamp 1rem–4rem). The front is a two-column grid: the lede and proof on the left, the hanging badge in a column capped at 30rem on the right, spanning the full first viewport (min-height 100svh minus the 3rem strap). The back sheet is inset from the viewport edge (clamp 0.5–2rem) with content capped at 68rem; sections are spaced by clamp(3rem, 8vw, 6rem). Lists (access zones, certifications) are ruled tables: a 2px light-ink rule on top, 1px hairline rows, 1.25rem row padding; access rows are a 12rem term column plus description.
+Side gutters are fluid (clamp 1rem–4rem). Past 1440px the page scales as a whole: the root font size becomes 1/90 of the viewport width (never below the reader's default), so every rem-based size (type, badge column, gutters, sheet width) grows in step with the vw-based ones and wider screens show the 1440 composition, margins included, just larger. Only px details (hairlines, borders, the 44px toggle) stay fixed. The front is a two-column grid: the lede and proof on the left, the hanging badge in a column capped at 30rem on the right, spanning the full first viewport (min-height 100svh minus the 3rem strap). The back sheet is inset from the viewport edge (clamp 0.5–2rem) with content capped at 68rem; sections are spaced by clamp(3rem, 8vw, 6rem). Lists (access zones, certifications) are ruled tables: a 2px light-ink rule on top, 1px hairline rows, 1.25rem row padding; access rows are a 12rem term column plus description.
 
 Below 1100px the front collapses to one column: the lede runs full width, the badge centres under it up to 30rem with a gap above it that grows with viewport width (1.5rem + 8vw) so the shallow 9° lanyard clears the proof line, the strap drops the name and spreads its links, and access rows stack. On short desktops (1101px+, height ≤ 820px) the badge compacts so its contact block stays in the first viewport. Below 420px the badge and its full-bleed strips tighten to 1.1rem insets. Below 390px the zone bands wrap to a 2×2 grid (four labels at text size no longer fit); below 360px the strap also tightens its tracking and gaps. Display headings never use non-breaking spaces, so they always wrap inside the viewport.
 
