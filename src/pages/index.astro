@@ -231,13 +231,15 @@ const barWidth = x;
     // Strap names the section in view; zones mark the one being read.
     const links = [...document.querySelectorAll<HTMLAnchorElement>('[data-nav]')];
     const zoneLinks = [...document.querySelectorAll<HTMLAnchorElement>('[data-zone]')];
+    // An empty aria-current reads as "false", so set a real value.
+    const mark = (a: HTMLElement, on: boolean) => on ? a.setAttribute('aria-current', 'true') : a.removeAttribute('aria-current');
     const io = new IntersectionObserver((entries) => {
       for (const en of entries) {
         if (!en.isIntersecting) continue;
         const el = en.target as HTMLElement;
         const sec = el.dataset.section!;
-        links.forEach((a) => a.toggleAttribute('aria-current', a.dataset.nav === sec));
-        if (el.classList.contains('access-row')) zoneLinks.forEach((a) => a.toggleAttribute('aria-current', a.dataset.zone === el.id));
+        links.forEach((a) => mark(a, a.dataset.nav === sec));
+        if (el.classList.contains('access-row')) zoneLinks.forEach((a) => mark(a, a.dataset.zone === el.id));
       }
     }, { rootMargin: '-45% 0px -50% 0px' });
     document.querySelectorAll('section[data-section], .access-row').forEach((s) => io.observe(s));
@@ -280,6 +282,7 @@ const barWidth = x;
   }
   ::selection { background: var(--accent); color: var(--ground); }
   h1, h2, p, ul, dl, dd { margin: 0; }
+  p, dd { text-wrap: pretty; }
   ul { padding: 0; list-style: none; }
   a { color: inherit; text-underline-offset: 0.2em; text-decoration-thickness: 2px; }
   :focus-visible { outline: 3px dashed var(--ink); outline-offset: 3px; }
@@ -318,7 +321,7 @@ const barWidth = x;
     margin-top: clamp(2rem, 14vh, 9rem);
   }
   .proof { grid-column: 1; margin-top: 1.5rem; max-width: 34ch; font-weight: 600; }
-  .proof a { font-weight: 800; white-space: nowrap; }
+  .proof a { font-weight: 800; white-space: nowrap; display: inline-block; padding-block: 0.6rem; margin-block: -0.6rem; }
   .hang { grid-column: 2; grid-row: 1 / span 3; position: relative; padding-top: 2.75rem; }
 
   .lanyard {
@@ -425,7 +428,7 @@ const barWidth = x;
   .verify, .out {
     display: inline-flex; align-items: center; gap: 0.5rem;
     font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none;
-    border-bottom: 4px solid currentColor; padding: 0.35rem 0;
+    border-bottom: 4px solid currentColor; padding: 0.5rem 0;
   }
   .verify:hover, .out:hover { border-bottom-style: double; border-bottom-width: 6px; }
   .verify svg, .out svg { width: 0.85em; height: 0.85em; }
@@ -467,11 +470,14 @@ const barWidth = x;
     .strap { padding-inline: 0.75rem; }
     .strap ul { gap: 0.5rem; }
     .strap a { letter-spacing: 0.06em; }
+  }
+  /* Four zones at text size stop fitting below 390px. */
+  @media (max-width: 389px) {
     .zones { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   }
   @media (max-width: 420px) {
     .badge { padding-inline: 1.1rem; }
     .foil, .zones { margin-inline: -1.1rem; }
-    .zone { font-size: 0.95rem; padding-inline: 0.5rem; letter-spacing: 0.03em; }
+    .zone { padding-inline: 0.5rem; letter-spacing: 0.03em; }
   }
 </style>

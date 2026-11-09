@@ -23,6 +23,12 @@ typography:
     fontWeight: 850
     lineHeight: 0.86
     letterSpacing: "-0.02em"
+  name-compact:
+    fontFamily: "'Sofia Sans Condensed Variable', 'Arial Narrow', sans-serif"
+    fontSize: "clamp(2.75rem, 1.5rem + 2.6vw, 3.75rem)"
+    fontWeight: 850
+    lineHeight: 0.86
+    letterSpacing: "-0.02em"
   display:
     fontFamily: "'Sofia Sans Condensed Variable', 'Arial Narrow', sans-serif"
     fontSize: "clamp(2.75rem, 1.6rem + 3.6vw, 5.25rem)"
@@ -182,7 +188,7 @@ Hierarchy comes from one condensed face pushed through weight and tracking: tigh
 **Character:** A single condensed grotesque doing both jobs, like a badge printer with one font cartridge. Weight and tracking do the ranking.
 
 ### Hierarchy
-- **Name** (850, clamp 3–5.25rem, 0.86, uppercase): The name on the badge; the largest type on the page.
+- **Name** (850, clamp 3–5.25rem, 0.86, uppercase): The name on the badge; the largest type on the page. On short desktops (1101px+, height ≤ 820px) it compacts to clamp 2.75–3.75rem so the contact block stays in the first viewport; this is the only exception to the Two Sizes Rule.
 - **Display** (850, the display clamp, 0.92, uppercase, balanced): Section heads on the back sheet.
 - **Lede** (800, the display clamp, 0.95, sentence case, max 12ch): The one positioning line on graphite.
 - **Label** (700–800, text size, 0.06–0.14em, uppercase): Strap links, position line, zones, tags, buttons, rule links, form title. The lanyard weave runs 700 at 0.3em.
@@ -197,7 +203,7 @@ Hierarchy comes from one condensed face pushed through weight and tracking: tigh
 
 Side gutters are fluid (clamp 1rem–4rem). The front is a two-column grid: the lede and proof on the left, the hanging badge in a column capped at 30rem on the right, spanning the full first viewport (min-height 100svh minus the 3rem strap). The back sheet is inset from the viewport edge (clamp 0.5–2rem) with content capped at 68rem; sections are spaced by clamp(3rem, 8vw, 6rem). Lists (access zones, certifications) are ruled tables: a 2px light-ink rule on top, 1px hairline rows, 1.25rem row padding; access rows are a 12rem term column plus description.
 
-Below 1100px the front collapses to one column: the lede runs full width, the badge centres under it up to 30rem with a gap above it that grows with viewport width (1.5rem + 8vw) so the shallow 9° lanyard clears the proof line, the strap drops the name and spreads its links, and access rows stack. On short desktops (1101px+, height ≤ 820px) the badge compacts so its contact block stays in the first viewport. Below 420px the badge and its full-bleed strips tighten to 1.1rem insets. Below 360px the strap tightens its tracking and gaps and the zone bands wrap to a 2×2 grid. Display headings never use non-breaking spaces, so they always wrap inside the viewport.
+Below 1100px the front collapses to one column: the lede runs full width, the badge centres under it up to 30rem with a gap above it that grows with viewport width (1.5rem + 8vw) so the shallow 9° lanyard clears the proof line, the strap drops the name and spreads its links, and access rows stack. On short desktops (1101px+, height ≤ 820px) the badge compacts so its contact block stays in the first viewport. Below 420px the badge and its full-bleed strips tighten to 1.1rem insets. Below 390px the zone bands wrap to a 2×2 grid (four labels at text size no longer fit); below 360px the strap also tightens its tracking and gaps. Display headings never use non-breaking spaces, so they always wrap inside the viewport.
 
 ## Elevation & Depth
 
