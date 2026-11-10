@@ -1,5 +1,6 @@
 ---
 import '@fontsource-variable/sofia-sans-condensed';
+import { projects } from '../data/projects';
 
 const formKey = import.meta.env.PUBLIC_WEB3FORMS_KEY ?? '';
 // Contact address as shifted char codes; decoded only when Copy email is clicked.
@@ -48,6 +49,7 @@ const barWidth = x;
     <ul>
       <li><a href="#top" data-nav="top">Badge</a></li>
       <li><a href="#access" data-nav="access">Access</a></li>
+      <li><a href="#projects" data-nav="projects">Projects</a></li>
       <li><a href="#certified" data-nav="certified">Certified</a></li>
       <li><a href="#return" data-nav="return">Contact</a></li>
     </ul>
@@ -59,6 +61,7 @@ const barWidth = x;
       <ul>
         <li><a href="#top" data-nav="top" onclick="this.closest('[popover]').hidePopover()">Badge</a></li>
         <li><a href="#access" data-nav="access" onclick="this.closest('[popover]').hidePopover()">Access</a></li>
+        <li><a href="#projects" data-nav="projects" onclick="this.closest('[popover]').hidePopover()">Projects</a></li>
         <li><a href="#certified" data-nav="certified" onclick="this.closest('[popover]').hidePopover()">Certified</a></li>
         <li><a href="#return" data-nav="return" onclick="this.closest('[popover]').hidePopover()">Contact</a></li>
       </ul>
@@ -119,6 +122,38 @@ const barWidth = x;
           </div>
         ))}
       </dl>
+    </section>
+
+    <section class="nb-sec" id="projects" data-section="projects" aria-labelledby="nb-projects-h">
+      <h2 id="nb-projects-h" class="nb-display">Projects</h2>
+      <p class="nb-sub">Web app templates I've built, ready to adapt for a new project.</p>
+      <div class="nb-projects">
+        {projects.map((p) => {
+          const live = /^https?:\/\//.test(p.demoUrl);
+          return (
+            <article class="nb-project" aria-labelledby={`project-${p.slug}`}>
+              <figure class="nb-shot"><img src={p.preview.src} alt={p.preview.alt} width="1600" height="1000" loading="lazy" decoding="async" /></figure>
+              <div class="nb-project-body">
+                <div class="nb-project-name">
+                  <h3 id={`project-${p.slug}`}>{p.name}</h3>
+                  <span>{p.category}</span>
+                </div>
+                <ul class="nb-chips" aria-label="Tech stack">{p.stack.map((s) => <li>{s}</li>)}</ul>
+                <ul class="nb-points" aria-label="Key features">{p.features.map((f) => <li>{f}</li>)}</ul>
+                <dl class="nb-facts">
+                  <div><dt>Screens</dt><dd>{p.screens}</dd></div>
+                  <div><dt>Last updated</dt><dd><time datetime={p.updated}>{p.updated}</time></dd></div>
+                </dl>
+                {live ? (
+                  <a class="nb-btn nb-demo" href={p.demoUrl} target="_blank" rel="noopener">Open live demo <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 3h8v8M13 3 3 13" fill="none" stroke="currentColor" stroke-width="2.5" /></svg><span class="sr">(opens in a new tab)</span></a>
+                ) : (
+                  <p class="nb-demo-soon">Live demo coming soon</p>
+                )}
+              </div>
+            </article>
+          );
+        })}
+      </div>
     </section>
 
     <section class="nb-sec" id="certified" data-section="certified" aria-labelledby="nb-cert-h">
@@ -298,9 +333,9 @@ const barWidth = x;
   .strap a:focus-visible { outline: calc(3 * var(--px)) solid var(--rep); outline-offset: calc(2 * var(--px)); }
   @media (prefers-reduced-motion: reduce) { .strap a { transition: none; } }
 
-  /* Phone menu: below calc(720 * var(--px)) the links fold into a bottom sheet (native popover). */
+  /* Phone menu: at 800px and below the links fold into a bottom sheet (native popover). */
   .strap-menu-btn { display: none; }
-  @media (max-width: 720px) {
+  @media (max-width: 800px) {
   .strap > ul { display: none; }
   .strap-name { font-size: 1rem; }
   .strap-menu-btn { display: inline-flex; }
@@ -313,6 +348,7 @@ const barWidth = x;
   .strap-sheet::backdrop { background: rgb(17 18 20 / 0.45); }
   .strap-grip { width: 6rem; height: 1rem; margin: 0 auto 1rem; border: calc(3 * var(--px)) solid var(--ink); border-radius: calc(999 * var(--px)); background: var(--card); }
   .strap .strap-sheet ul { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.75rem; width: auto; justify-content: stretch; }
+  .strap .strap-sheet li:last-child:nth-child(odd) { grid-column: 1 / -1; }
   .strap .strap-sheet a { display: flex; align-items: flex-end; min-height: 5.5rem; padding: 0.7rem 0.8rem; font-size: 1.4rem; font-weight: 900; letter-spacing: 0.04em; text-transform: uppercase; background: var(--card); border: calc(3 * var(--px)) solid var(--ink); box-shadow: calc(4 * var(--px)) calc(4 * var(--px)) 0 var(--ink); }
   @media (hover: hover) { .strap .strap-sheet a:hover { background: var(--to); translate: calc(-2 * var(--px)) calc(-2 * var(--px)); box-shadow: calc(6 * var(--px)) calc(6 * var(--px)) 0 var(--ink); } }
   .strap .strap-sheet a[aria-current] { background: var(--ink); color: var(--to); box-shadow: calc(4 * var(--px)) calc(4 * var(--px)) 0 var(--rep); }
@@ -379,6 +415,33 @@ const barWidth = x;
   .nb-row { background: var(--card); border: calc(3 * var(--px)) solid var(--ink); box-shadow: calc(6 * var(--px)) calc(6 * var(--px)) 0 var(--ink); padding: 1.25rem; display: grid; gap: 0.9rem; align-content: start; }
   .nb-tag { display: inline-block; border: calc(3 * var(--px)) solid var(--ink); padding: 0.35rem 0.7rem; font-weight: 900; letter-spacing: 0.06em; text-transform: uppercase; }
   .nb-row dd { margin: 0; font-weight: 600; font-size: 1.1rem; max-width: 46ch; }
+  /* Projects: each template is a pass, picture on the left from 1024px up */
+  .nb-projects { margin-top: 2rem; display: grid; gap: 2rem; }
+  .nb-project { display: grid; background: var(--card); border: calc(4 * var(--px)) solid var(--ink); box-shadow: var(--off) var(--off) 0 var(--ink); }
+  .nb-shot { margin: 0; background: #f4f4f4; border-bottom: calc(3 * var(--px)) solid var(--ink); display: flex; align-items: center; }
+  .nb-shot img { display: block; width: 100%; height: auto; }
+  @media (min-width: 1024px) {
+    .nb-project { grid-template-columns: 1.4fr 1fr; }
+    .nb-shot { border-bottom: 0; border-right: calc(3 * var(--px)) solid var(--ink); }
+  }
+  .nb-project-body { display: flex; flex-direction: column; gap: 1.25rem; padding: 1.5rem; }
+  .nb-project-name { display: flex; justify-content: space-between; align-items: center; gap: 0.75rem; }
+  .nb-project-name h3 { margin: 0; font-size: clamp(2.25rem, 1.6rem + 1.6vw, 3.25rem); font-weight: 900; line-height: 0.9; letter-spacing: -0.02em; text-transform: uppercase; }
+  .nb-project-name span { flex: none; font-weight: 900; letter-spacing: 0.06em; text-transform: uppercase; background: var(--to); border: calc(3 * var(--px)) solid var(--ink); padding: 0.3rem 0.65rem; rotate: -3deg; }
+  .nb-chips { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+  .nb-chips li { font-weight: 800; font-size: 0.95rem; letter-spacing: 0.04em; text-transform: uppercase; border: calc(3 * var(--px)) solid var(--ink); padding: 0.25rem 0.55rem; white-space: nowrap; }
+  .nb-points { display: grid; gap: 0.6rem; font-size: 1.1rem; font-weight: 600; line-height: 1.4; }
+  .nb-points li { display: flex; gap: 0.75rem; }
+  .nb-points li::before { content: ""; flex: none; width: 0.65rem; height: 0.65rem; margin-top: 0.4rem; background: var(--ink); }
+  .nb-facts { display: grid; grid-template-columns: 1fr 1fr; margin: 0; border: calc(3 * var(--px)) solid var(--ink); }
+  .nb-facts div { padding: 0.65rem 0.8rem; }
+  .nb-facts div + div { border-left: calc(3 * var(--px)) solid var(--ink); }
+  .nb-facts dt { font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; font-size: 0.85rem; }
+  .nb-facts dd { margin: 0.2rem 0 0; font-size: 1.4rem; font-weight: 900; font-variant-numeric: tabular-nums; }
+  .nb-demo { margin-top: auto; display: inline-flex; align-items: center; justify-content: center; gap: 0.6rem; text-decoration: none; }
+  .nb-demo svg { width: 0.85em; height: 0.85em; }
+  .nb-demo-soon { margin-top: auto; display: flex; align-items: center; justify-content: center; min-height: 3.25rem; font-weight: 900; letter-spacing: 0.12em; text-transform: uppercase; border: calc(3 * var(--px)) dashed var(--ink); }
+
   .nb-certs { margin-top: 2rem; display: grid; gap: 1rem; }
   .nb-certs li { display: flex; justify-content: space-between; align-items: center; gap: 1rem 2rem; flex-wrap: wrap; background: var(--card); border: calc(3 * var(--px)) solid var(--ink); border-left-width: calc(14 * var(--px)); padding: 1.1rem 1.25rem; }
   .nb-certs li:nth-child(1) { border-left-color: var(--ec); }

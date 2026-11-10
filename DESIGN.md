@@ -194,7 +194,7 @@ A single page with a sticky strap (3.5rem) over one content column. The layout i
 - **Front (≥1101px):** Two columns, `minmax(0, 1fr) minmax(0, 30rem)`, with a `clamp(2rem, 6vw, 6rem)` gap and a minimum height of `calc(100svh - 7rem)`. The lede and proof box sit on the left, centred vertically; the hanging badge sits on the right.
 - **Front (≤1100px):** One column, with the badge below the lede. The strap keeps the name on the left and the links grouped on the right.
 - **Sections:** `clamp(4rem, 9vw, 7rem)` apart. Access is a 2-up grid of cards from 760px up (1rem gap below, 1.25rem above). Certifications are a stack of full-width rows. The page closes with the yellow "If found" panel.
-- **Phone (≤720px):** The nav links fold into the bottom-sheet menu. The main area clips horizontal overflow, so the tilted badge never widens the page.
+- **Phone (≤800px):** The nav links fold into the bottom-sheet menu. The main area clips horizontal overflow, so the tilted badge never widens the page.
 
 ## Elevation & Depth
 
@@ -244,7 +244,10 @@ The zone blocks on the badge are 3.5rem tall, 2-up, with the label pinned bottom
 ### Navigation (the strap)
 A sticky Pass Paper bar with a 3px ink bottom rule. On the left, the name is an ink block with yellow text, shown at every width. On the right, the links sit as one group of boxed labels with a transparent 3px border. On devices with a mouse, hover gives a yellow fill, an ink border and a Chip shadow; touch devices skip hover so no state sticks after a tap. The current section is filled ink with a yellow label and a blue Current shadow, and it carries `aria-current="location"`. It follows the scroll: the section crossing 45% of the viewport is current, the bottom of the page counts as Contact, and a clicked link stays current until the visitor scrolls by hand.
 
-**Phone (≤720px):** The links fold away. The name block comes back on the left, with a 2.75rem ink menu button (yellow bars, blue Current shadow) on the right. The button opens a native popover bottom sheet that slides up (0.35s ease-out, off under reduced motion) over a 45% ink scrim. The sheet is paper with a 4px ink top border and a hole-punch grip. Inside is a 2×2 grid of boxed link blocks (5.5rem tall, label bottom-left, Card shadow); the current section is inked in. A full-width yellow Close bar sits underneath. Tapping a link, tapping outside, or pressing Escape closes the sheet.
+**Phone (≤800px):** The links fold away. The name block comes back on the left, with a 2.75rem ink menu button (yellow bars, blue Current shadow) on the right. The button opens a native popover bottom sheet that slides up (0.35s ease-out, off under reduced motion) over a 45% ink scrim. The sheet is paper with a 4px ink top border and a hole-punch grip. Inside is a 2×2 grid of boxed link blocks (5.5rem tall, label bottom-left, Card shadow); the current section is inked in. A full-width yellow Close bar sits underneath. Tapping a link, tapping outside, or pressing Escape closes the sheet.
+
+### Project passes
+Each template in Projects is a white pass with a 4px ink border and the Pass shadow: the preview on the left (1.4fr) and the details on the right from 1024px up, stacked below that. The details hold the name (uppercase 900), a tilted yellow category tag, boxed stack chips, square-bullet features, a two-cell Screens / Last updated box, and a yellow Open live demo button. When there's no public demo, a dashed "Live demo coming soon" box replaces the button instead of a dead link.
 
 ### Signature: the hanging pass
 A 3.25rem black strap with a yellow clasp drops into a white pass tilted -2deg with the Pass shadow. The pass holds a hole-punch slot, the stacked name, an inked position line, the four zones, the contact block and a barcode drawn from the name's letters. It's the only tilted object on the page; don't tilt anything else.

@@ -40,7 +40,8 @@ Recruiters skim and compare candidates in a short window. Clients judge credibil
 - Certifications (titles match the Credly badge pages; issue dates were not visible on them):
   - SAP Certified - SAP Generative AI Developer — https://www.credly.com/badges/a9ff526e-f1d1-4bbc-ad6c-5cef9cb8425b
   - SAP Certified - SAP SuccessFactors Employee Central Core and Position Management — https://www.credly.com/badges/6519d5c7-5f2c-49c7-a084-715b848cf7e0
-- **Absent:** no client projects, case studies, testimonials, or public repos have been provided. Future work must not invent any of these, and must not add placeholder client logos, metrics, or quotes.
+- Projects: web app templates Evan has built, shown in the Projects section from `src/data/projects.ts`. Entries stay anonymous (no client names, logos, URLs or real records). The first entry (an LMS template) still has placeholder details to replace, and has no public demo yet.
+- **Absent:** no client case studies, testimonials, or public repos have been provided. Future work must not invent any of these, and must not add placeholder client logos, metrics, or quotes.
 - **No photo, by choice.** Don't add an avatar, a silhouette, or a "photo here" slot.
 
 ## Product Principles
