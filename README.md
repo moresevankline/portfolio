@@ -25,5 +25,5 @@ Without a key, the page shows a "Get in touch" block (Copy email + LinkedIn) ins
 
 - `src/pages/index.astro` — the whole site (markup, styles, script)
 - `PRODUCT.md` — product context: audience, positioning, content rules
-- `DESIGN.md` — design system (Graphite & Teal tokens, type, layout)
+- `DESIGN.md` — design system (Laminated Access Pass: neo-brutalist tokens, type, layout)
 - `public/favicon.svg` — badge favicon

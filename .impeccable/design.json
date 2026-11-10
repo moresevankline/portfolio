@@ -1,450 +1,355 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-11-07T00:00:00Z",
+  "generatedAt": "2026-11-10T06:06:18Z",
   "title": "Design System: Evan Kline Mores",
   "extensions": {
     "colorMeta": {
-      "ground": {
+      "paper": {
         "role": "neutral",
-        "displayName": "Graphite",
-        "canonical": "oklch(19.0% 0.005 248)",
+        "displayName": "Pass Paper",
+        "canonical": "#f1efe9",
         "tonalRamp": [
-          "#0a0b0c",
-          "#232425",
-          "#3e4042",
-          "#5b5e60",
-          "#7b7d80",
-          "#9c9fa1",
-          "#c2c4c6",
-          "#edeef0"
+          "#3c3c3a",
+          "#787874",
+          "#b5b3af",
+          "#f1efe9",
+          "#f4f3ee",
+          "#f8f7f4",
+          "#fbfaf8",
+          "#fdfdfc"
         ]
       },
-      "pvc": {
+      "card": {
         "role": "neutral",
-        "displayName": "Dark PVC",
-        "canonical": "oklch(24.2% 0.009 256)",
+        "displayName": "Laminate White",
+        "canonical": "#ffffff",
         "tonalRamp": [
-          "#0a0b0d",
-          "#222427",
-          "#3d4044",
-          "#5a5e63",
-          "#7a7e83",
-          "#9b9fa3",
-          "#c2c4c8",
-          "#edeff1"
-        ]
-      },
-      "ink": {
-        "role": "neutral",
-        "displayName": "Badge Ink",
-        "canonical": "oklch(94.6% 0.002 248)",
-        "tonalRamp": [
-          "#0b0b0b",
-          "#242424",
-          "#3f4040",
-          "#5d5e5e",
-          "#7c7d7e",
-          "#9e9e9f",
-          "#c3c4c5",
-          "#eeeeef"
-        ]
-      },
-      "ink-2": {
-        "role": "neutral",
-        "displayName": "Faded Ink",
-        "canonical": "oklch(74.5% 0.012 252)",
-        "tonalRamp": [
-          "#0a0b0d",
-          "#212428",
-          "#3c4045",
-          "#595e64",
-          "#787e84",
-          "#9a9fa5",
-          "#c0c4c9",
-          "#eceff2"
-        ]
-      },
-      "strap": {
-        "role": "neutral",
-        "displayName": "Slate Strap",
-        "canonical": "oklch(30.3% 0.013 253)",
-        "tonalRamp": [
-          "#0a0b0d",
-          "#212428",
-          "#3c4045",
-          "#595e65",
-          "#787e85",
-          "#999fa6",
-          "#c0c4ca",
-          "#eceff2"
-        ]
-      },
-      "accent": {
-        "role": "primary",
-        "displayName": "Strap Teal",
-        "canonical": "oklch(80.2% 0.097 182)",
-        "tonalRamp": [
-          "#00100c",
-          "#002d26",
-          "#004d43",
-          "#006f62",
-          "#219082",
-          "#59b0a3",
-          "#95d2c7",
-          "#d3f8f0"
-        ]
-      },
-      "hair": {
-        "role": "neutral",
-        "displayName": "Hairline",
-        "canonical": "oklch(33.8% 0.013 253)",
-        "tonalRamp": [
-          "#0a0b0d",
-          "#212428",
-          "#3c4045",
-          "#595e65",
-          "#787e85",
-          "#9a9fa5",
-          "#c0c4c9",
-          "#eceff2"
-        ]
-      },
-      "placeholder": {
-        "role": "neutral",
-        "displayName": "Placeholder Grey",
-        "canonical": "oklch(65.4% 0.013 252)",
-        "tonalRamp": [
-          "#0a0b0d",
-          "#212428",
-          "#3c4045",
-          "#595e65",
-          "#787e85",
-          "#999fa5",
-          "#c0c4c9",
-          "#eceff2"
-        ]
-      },
-      "ec": {
-        "role": "secondary",
-        "displayName": "Zone Teal",
-        "canonical": "oklch(51.7% 0.086 183)",
-        "tonalRamp": [
-          "#00100d",
-          "#002c27",
-          "#004c43",
-          "#006d62",
-          "#358e82",
-          "#63aea3",
-          "#9bd1c8",
-          "#d6f7f1"
-        ]
-      },
-      "to": {
-        "role": "secondary",
-        "displayName": "Zone Gold",
-        "canonical": "oklch(73.8% 0.125 90)",
-        "tonalRamp": [
-          "#130900",
-          "#332100",
-          "#553b00",
-          "#795800",
-          "#9a7800",
-          "#ba9b43",
-          "#d9c286",
-          "#fceec9"
-        ]
-      },
-      "rep": {
-        "role": "secondary",
-        "displayName": "Zone Slate",
-        "canonical": "oklch(50.4% 0.038 253)",
-        "tonalRamp": [
-          "#070c11",
-          "#1c252f",
-          "#344151",
-          "#4e5f73",
-          "#6d7f94",
-          "#90a0b4",
-          "#b9c6d4",
-          "#e7eff9"
-        ]
-      },
-      "ok": {
-        "role": "neutral",
-        "displayName": "Status Green",
-        "canonical": "oklch(80.7% 0.117 158)",
-        "tonalRamp": [
-          "#001104",
-          "#002e16",
-          "#004e2b",
-          "#007143",
-          "#319262",
-          "#61b285",
-          "#9ad4b1",
-          "#d6f9e3"
-        ]
-      },
-      "err": {
-        "role": "neutral",
-        "displayName": "Status Red",
-        "canonical": "oklch(78.8% 0.123 26)",
-        "tonalRamp": [
-          "#1c0202",
-          "#42110f",
-          "#6c2421",
-          "#973c37",
-          "#bb5d55",
-          "#db827a",
-          "#f4b0a9",
-          "#ffe3dd"
-        ]
-      },
-      "on-zone": {
-        "role": "neutral",
-        "displayName": "On Zone White",
-        "canonical": "oklch(100% 0 0)",
-        "tonalRamp": [
-          "#ffffff",
-          "#ffffff",
-          "#ffffff",
+          "#404040",
+          "#808080",
+          "#bfbfbf",
           "#ffffff",
           "#ffffff",
           "#ffffff",
           "#ffffff",
           "#ffffff"
         ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Press Ink",
+        "canonical": "#111214",
+        "tonalRamp": [
+          "#040405",
+          "#08090a",
+          "#0d0e0f",
+          "#111214",
+          "#4c4d4f",
+          "#88888a",
+          "#b8b8b8",
+          "#e2e3e3"
+        ]
+      },
+      "web": {
+        "role": "primary",
+        "displayName": "Web Zone Ink",
+        "canonical": "#111214",
+        "tonalRamp": [
+          "#040405",
+          "#08090a",
+          "#0d0e0f",
+          "#111214",
+          "#4c4d4f",
+          "#88888a",
+          "#b8b8b8",
+          "#e2e3e3"
+        ]
+      },
+      "ec": {
+        "role": "secondary",
+        "displayName": "EC Teal",
+        "canonical": "#0f8f80",
+        "tonalRamp": [
+          "#042420",
+          "#084840",
+          "#0b6b60",
+          "#0f8f80",
+          "#4baba0",
+          "#87c7c0",
+          "#b7ddd9",
+          "#e2f2f0"
+        ]
+      },
+      "to": {
+        "role": "primary",
+        "displayName": "Pass Yellow",
+        "canonical": "#ffc93c",
+        "tonalRamp": [
+          "#40320f",
+          "#80641e",
+          "#bf972d",
+          "#ffc93c",
+          "#ffd66d",
+          "#ffe49e",
+          "#ffefc4",
+          "#fff9e8"
+        ]
+      },
+      "rep": {
+        "role": "secondary",
+        "displayName": "Reporting Blue",
+        "canonical": "#4f6bed",
+        "tonalRamp": [
+          "#141b3b",
+          "#283676",
+          "#3b50b2",
+          "#4f6bed",
+          "#7b90f2",
+          "#a7b5f6",
+          "#cad3fa",
+          "#eaedfd"
+        ]
+      },
+      "err": {
+        "role": "neutral",
+        "displayName": "Error Red",
+        "canonical": "#b3261e",
+        "tonalRamp": [
+          "#2d0a08",
+          "#5a130f",
+          "#861c16",
+          "#b3261e",
+          "#c65c56",
+          "#d9928e",
+          "#e8bebc",
+          "#f6e5e4"
+        ]
+      },
+      "ok": {
+        "role": "neutral",
+        "displayName": "Sent Green",
+        "canonical": "#0f6e5f",
+        "tonalRamp": [
+          "#041c18",
+          "#083730",
+          "#0b5247",
+          "#0f6e5f",
+          "#4b9287",
+          "#87b6af",
+          "#b7d4cf",
+          "#e2eeec"
+        ]
       }
     },
     "typographyMeta": {
+      "lede": {
+        "displayName": "Lede",
+        "purpose": "The opening statement only; key phrase on a Pass Yellow highlight."
+      },
       "name": {
         "displayName": "Name",
-        "purpose": "The name printed on the badge; largest type on the page."
+        "purpose": "The stacked name on the pass."
       },
       "display": {
         "displayName": "Display",
-        "purpose": "Uppercase section heads on the back sheet."
+        "purpose": "Section headings, paper type in an ink block."
       },
-      "lede": {
-        "displayName": "Lede",
-        "purpose": "The single positioning line on graphite, sentence case, max 12ch."
-      },
-      "label": {
-        "displayName": "Label",
-        "purpose": "Strap, position line, zones, tags, buttons, rule links; uppercase, tracked 0.06\u20130.14em (lanyard weave 0.3em)."
+      "title": {
+        "displayName": "Title",
+        "purpose": "Certification titles and the proof box."
       },
       "body": {
         "displayName": "Body",
-        "purpose": "Base text at weight 450."
+        "purpose": "Zone descriptions and small print, 46–70ch."
       },
-      "body-strong": {
-        "displayName": "Body Strong",
-        "purpose": "Running copy, field labels and status lines at 600."
+      "label": {
+        "displayName": "Label",
+        "purpose": "Nav, buttons, zones, tags and rule links; uppercase 800–900."
       }
     },
     "shadows": [
       {
-        "name": "hanging-card",
-        "value": "0 1.5rem 3rem -1rem rgb(0 0 0 / 0.55), 0 0.25rem 0.5rem rgb(0 0 0 / 0.3)",
-        "purpose": "The front badge only."
+        "name": "pass",
+        "value": "8px 8px 0 #111214",
+        "purpose": "The badge."
       },
       {
-        "name": "punched-slot",
-        "value": "inset 0 2px 3px rgb(0 0 0 / 0.35)",
-        "purpose": "Slot cut-out on badge and back sheet."
+        "name": "panel",
+        "value": "10px 10px 0 #111214",
+        "purpose": "The closing 'If found' panel."
+      },
+      {
+        "name": "card",
+        "value": "6px 6px 0 #111214",
+        "purpose": "Access zone cards."
+      },
+      {
+        "name": "proof",
+        "value": "5px 5px 0 #111214",
+        "purpose": "The proof box under the lede."
+      },
+      {
+        "name": "control",
+        "value": "4px 4px 0 #111214",
+        "purpose": "Buttons at rest; 6px on hover, 0 on press."
+      },
+      {
+        "name": "chip",
+        "value": "3px 3px 0 #111214",
+        "purpose": "Zones and nav hover; 5px on hover."
+      },
+      {
+        "name": "current",
+        "value": "3px 3px 0 #4f6bed",
+        "purpose": "The current nav item."
       }
     ],
     "motion": [
       {
-        "name": "badge-swing",
-        "value": "swing 1.6s cubic-bezier(0.22, 1, 0.36, 1) both; rotate -7deg \u2192 3.5 \u2192 -1.5 \u2192 0.5 \u2192 0, pivot 50% -3rem",
-        "purpose": "One entrance swing of the badge from its clip; removed under reduced motion."
-      },
-      {
-        "name": "foil-glint",
-        "value": "pointer-driven --fx/--fy (0\u20131) shifting glint position and gradient angle 95\u2013125deg",
-        "purpose": "The one reflective accent tracks the pointer; disabled under reduced motion."
-      },
-      {
         "name": "press",
-        "value": "translate: 0 1px",
-        "purpose": "Active state of filled buttons."
-      },
-      {
-        "name": "scroll",
-        "value": "scroll-behavior: smooth; scroll-padding-top: 4rem",
-        "purpose": "In-page anchors clear the strap; auto under reduced motion."
-      }
-    ],
-    "states": [
-      {
-        "name": "focus",
-        "value": "outline: 3px dashed var(--ink); outline-offset: 3px",
-        "purpose": "Global focus ring; zones inset it -6px in their own text colour."
-      },
-      {
-        "name": "hover-rule",
-        "value": "border-style: double",
-        "purpose": "Hover on strap links, zones and rule links."
-      },
-      {
-        "name": "current-rule",
-        "value": "solid 4px (strap) / 6px (zone) rule in currentColor",
-        "purpose": "Section in view / zone being read."
-      },
-      {
-        "name": "disabled",
-        "value": "dashed border, transparent fill, ink-2 text",
-        "purpose": "Disabled buttons and fields."
+        "value": "translate .12s ease-out, box-shadow .12s ease-out",
+        "purpose": "Lift on hover, sink into the shadow on press. Off under prefers-reduced-motion."
       }
     ],
     "breakpoints": [
       {
-        "name": "tiny",
-        "value": "max-width: 360px"
+        "name": "phone",
+        "value": "480px"
       },
       {
-        "name": "narrow",
-        "value": "max-width: 420px"
+        "name": "cards-2up",
+        "value": "760px"
       },
       {
-        "name": "stack",
-        "value": "max-width: 1100px"
-      },
-      {
-        "name": "short-desktop",
-        "value": "min-width: 1101px and max-height: 820px"
+        "name": "front-2col",
+        "value": "1101px"
       }
-    ],
-    "theme": {
-      "colorScheme": "dark",
-      "themeColor": "#121416",
-      "selection": "background var(--accent), color var(--ground)",
-      "caret": "var(--accent) page-wide; var(--ink) inside fields"
-    }
+    ]
   },
   "components": [
     {
-      "name": "Send Button",
+      "name": "Primary Button",
       "kind": "button",
-      "refersTo": "button-send",
-      "description": "Primary form action: light-ink fill, inverts to PVC on hover, dashed when disabled.",
-      "html": "<button class=\"ds-send\">Send</button> <button class=\"ds-send\" disabled>Send</button>",
-      "css": ".ds-send{font-family:'Sofia Sans Condensed Variable','Arial Narrow',sans-serif;font-size:1.0625rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;background:var(--ink,#ecedee);color:var(--pvc,#1d2024);border:2px solid var(--ink,#ecedee);border-radius:.35rem;padding:.7rem 1.75rem;cursor:pointer}.ds-send:hover{background:var(--pvc,#1d2024);color:var(--ink,#ecedee)}.ds-send:active{translate:0 1px}.ds-send:focus-visible{outline:3px dashed var(--ink,#ecedee);outline-offset:3px}.ds-send:disabled{cursor:not-allowed;background:transparent;color:var(--ink-2,#a7adb4);border-style:dashed;translate:none}"
+      "refersTo": "button-primary",
+      "description": "Copy email and Send. Yellow, boxed, pressable.",
+      "html": "<button class=\"ds-btn\">Copy email</button>",
+      "css": "font-family:'Sofia Sans Condensed Variable', 'Arial Narrow', sans-serif;.ds-btn{font-family:inherit;font-weight:900;letter-spacing:.12em;text-transform:uppercase;background:#ffc93c;color:#111214;border:3px solid #111214;padding:.75rem 1.4rem;box-shadow:4px 4px 0 #111214;cursor:pointer;transition:translate .12s ease-out,box-shadow .12s ease-out}.ds-btn:hover{translate:-2px -2px;box-shadow:6px 6px 0 #111214}.ds-btn:active{translate:4px 4px;box-shadow:0 0 0 #111214}.ds-btn:focus-visible{outline:3px solid #4f6bed;outline-offset:3px}"
     },
     {
-      "name": "Copy Email Button",
+      "name": "Button on Yellow",
       "kind": "button",
-      "refersTo": "button-copy",
-      "description": "Teal-fill action on the PVC back sheet; turns to PVC with an ink border on hover.",
-      "html": "<button class=\"ds-copy\">Copy email</button>",
-      "css": ".ds-copy{font-family:'Sofia Sans Condensed Variable','Arial Narrow',sans-serif;font-size:1.0625rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;background:var(--accent,#6fd3c3);color:var(--ground,#121416);border:2px solid var(--accent,#6fd3c3);border-radius:.35rem;padding:.8rem 1.75rem;cursor:pointer}.ds-copy:hover{background:var(--pvc,#1d2024);color:var(--ink,#ecedee);border-color:var(--ink,#ecedee)}.ds-copy:active{translate:0 1px}.ds-copy:focus-visible{outline:3px dashed var(--ink,#ecedee);outline-offset:3px}"
+      "refersTo": "button-on-yellow",
+      "description": "Inverted button inside the yellow closing panel.",
+      "html": "<div class=\"ds-wrap\"><button class=\"ds-btn-inv\">Copy email</button></div>",
+      "css": ".ds-wrap{background:#ffc93c;padding:1.5rem}.ds-btn-inv{font-family:'Sofia Sans Condensed Variable', 'Arial Narrow', sans-serif;font-weight:900;letter-spacing:.12em;text-transform:uppercase;background:#111214;color:#ffc93c;border:3px solid #111214;padding:.75rem 1.4rem;box-shadow:4px 4px 0 #111214;cursor:pointer;transition:translate .12s ease-out,box-shadow .12s ease-out}.ds-btn-inv:hover{translate:-2px -2px;box-shadow:6px 6px 0 #111214}.ds-btn-inv:active{translate:4px 4px;box-shadow:0 0 0 #111214}.ds-btn-inv:focus-visible{outline:3px solid #4f6bed;outline-offset:3px}"
     },
     {
       "name": "Rule Link",
       "kind": "custom",
-      "refersTo": "link-rule",
-      "description": "Uppercase action link on a 4px rule; hover turns the rule double.",
-      "html": "<a class=\"ds-out\" href=\"#\">Verify on Credly <svg viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M5 3h8v8M13 3 3 13\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/></svg></a>",
-      "css": ".ds-out{font-family:'Sofia Sans Condensed Variable','Arial Narrow',sans-serif;font-size:1.0625rem;display:inline-flex;align-items:center;gap:.5rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;color:var(--ink,#ecedee);border-bottom:4px solid currentColor;padding:.35rem 0}.ds-out:hover{border-bottom-style:double;border-bottom-width:6px}.ds-out:focus-visible{outline:3px dashed var(--ink,#ecedee);outline-offset:3px}.ds-out svg{width:.85em;height:.85em}"
+      "refersTo": "rule-link",
+      "description": "LinkedIn, Verify on Credly: uppercase with a 4px underline.",
+      "html": "<a class=\"ds-rule\" href=\"#\">Verify on Credly <svg viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M5 3h8v8M13 3 3 13\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.5\"/></svg></a>",
+      "css": ".ds-rule{font-family:'Sofia Sans Condensed Variable', 'Arial Narrow', sans-serif;display:inline-flex;align-items:center;gap:.45rem;font-weight:900;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;color:#111214;border-bottom:4px solid currentColor;padding:.3rem 0}.ds-rule svg{width:.85em;height:.85em}.ds-rule:hover{border-bottom-style:double;border-bottom-width:6px}.ds-rule:focus-visible{outline:3px solid #4f6bed;outline-offset:3px}"
     },
     {
       "name": "Text Field",
       "kind": "input",
-      "refersTo": "input-field",
-      "description": "Graphite field cut into the PVC, 2px light-ink border, label above; dashed when disabled.",
+      "refersTo": "field",
+      "description": "Contact form field.",
       "html": "<label class=\"ds-field\"><span>Your email</span><input type=\"email\" placeholder=\"you@company.com\"></label>",
-      "css": ".ds-field{font-family:'Sofia Sans Condensed Variable','Arial Narrow',sans-serif;font-size:1.0625rem;display:grid;gap:.3rem;font-weight:600;color:var(--ink,#ecedee)}.ds-field input{font:inherit;color:var(--ink,#ecedee);background:var(--ground,#121416);border:2px solid var(--ink,#ecedee);border-radius:.35rem;padding:.6rem .75rem;caret-color:var(--ink,#ecedee)}.ds-field input::placeholder{color:var(--placeholder,#8b9198)}.ds-field input:focus-visible{outline:3px dashed var(--ink,#ecedee);outline-offset:2px}.ds-field input:disabled{background:transparent;border-style:dashed;border-color:var(--ink-2,#a7adb4)}"
+      "css": ".ds-field{font-family:'Sofia Sans Condensed Variable', 'Arial Narrow', sans-serif;display:grid;gap:.3rem;font-weight:700;color:#111214}.ds-field input{font:inherit;color:#111214;background:#f1efe9;border:3px solid #111214;border-radius:0;padding:.6rem .75rem}.ds-field input:focus-visible{outline:3px solid #4f6bed;outline-offset:3px}"
     },
     {
       "name": "Strap Navigation",
       "kind": "nav",
       "refersTo": "strap",
-      "description": "Sticky slate strap printed in teal; double underline on hover, solid underline and light-ink text when current.",
-      "html": "<nav class=\"ds-strap\"><span>Evan Kline Mores</span><ul><li><a href=\"#\" aria-current=\"true\">Badge</a></li><li><a href=\"#\">Access</a></li><li><a href=\"#\">Certified</a></li><li><a href=\"#\">Contact</a></li></ul></nav>",
-      "css": ".ds-strap{font-family:'Sofia Sans Condensed Variable','Arial Narrow',sans-serif;font-size:1.0625rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;height:3rem;padding:0 2rem;background:var(--strap,#2a2f35);color:var(--accent,#6fd3c3);font-weight:700;letter-spacing:.14em;text-transform:uppercase}.ds-strap ul{display:flex;gap:2rem;margin:0;padding:0;list-style:none}.ds-strap a{color:inherit;text-decoration:none;display:block;padding:.75rem 0 .6rem;border-bottom:4px solid transparent}.ds-strap a:hover{border-bottom-style:double;border-bottom-color:currentColor}.ds-strap a[aria-current]{border-bottom-color:currentColor;color:var(--ink,#ecedee)}.ds-strap a:focus-visible{outline:3px dashed var(--ink,#ecedee);outline-offset:3px}"
+      "description": "Sticky paper bar; the current section is inked in.",
+      "html": "<nav class=\"ds-strap\"><span class=\"ds-strap-name\">Evan Kline Mores</span><ul><li><a href=\"#\" aria-current=\"true\">Badge</a></li><li><a href=\"#\">Access</a></li><li><a href=\"#\">Certified</a></li><li><a href=\"#\">Contact</a></li></ul></nav>",
+      "css": ".ds-strap{font-family:'Sofia Sans Condensed Variable', 'Arial Narrow', sans-serif;display:flex;align-items:center;justify-content:space-between;gap:1rem;height:3.5rem;padding:0 1.5rem;background:#f1efe9;color:#111214;border-bottom:3px solid #111214;font-weight:800;letter-spacing:.12em;text-transform:uppercase}.ds-strap-name{font-weight:900;font-size:1.15rem;letter-spacing:.04em;background:#111214;color:#ffc93c;padding:.3rem .6rem;white-space:nowrap}.ds-strap ul{display:flex;gap:.6rem;list-style:none;margin:0;padding:0}.ds-strap a{display:block;color:inherit;text-decoration:none;padding:.45rem .7rem;border:3px solid transparent;transition:translate .12s ease-out,box-shadow .12s ease-out,background-color .12s ease-out}.ds-strap a:hover{background:#ffc93c;border-color:#111214;box-shadow:3px 3px 0 #111214;translate:-1px -1px}.ds-strap a[aria-current]{background:#111214;color:#ffc93c;border-color:#111214;box-shadow:3px 3px 0 #4f6bed}.ds-strap a:focus-visible{outline:3px solid #4f6bed;outline-offset:2px}"
     },
     {
-      "name": "Zone Bands",
-      "kind": "custom",
-      "refersTo": "zone-ink",
-      "description": "Four full-bleed access zones; line-form hover, focus and current states.",
-      "html": "<ul class=\"ds-zones\"><li><a class=\"ds-zone ds-ink\" href=\"#\" aria-current=\"true\">Web</a></li><li><a class=\"ds-zone ds-ec\" href=\"#\">EC Core</a></li><li><a class=\"ds-zone ds-to\" href=\"#\">Time Off</a></li><li><a class=\"ds-zone ds-rep\" href=\"#\">Reporting</a></li></ul>",
-      "css": ".ds-zones{display:grid;grid-template-columns:repeat(4,1fr);margin:0;padding:0;list-style:none}.ds-zone{font-family:'Sofia Sans Condensed Variable','Arial Narrow',sans-serif;font-size:1.0625rem;display:flex;align-items:flex-end;min-height:4.5rem;padding:.6rem .75rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;line-height:1.05;border-top:6px solid transparent;border-bottom:6px solid transparent}.ds-zone:hover{border-top-style:double;border-top-color:currentColor}.ds-zone:focus-visible{outline:3px dashed currentColor;outline-offset:-6px}.ds-zone[aria-current]{border-bottom-color:currentColor}.ds-ink{background:var(--ink,#ecedee);color:var(--pvc,#1d2024)}.ds-ec{background:var(--ec,#17786d);color:#fff}.ds-to{background:var(--to,#c9a640);color:var(--ground,#121416)}.ds-rep{background:var(--rep,#55667a);color:#fff}"
-    },
-    {
-      "name": "Zone Tag",
+      "name": "Zone Blocks",
       "kind": "chip",
-      "refersTo": "tag",
-      "description": "A zone's colour as a small inline chip on the back sheet.",
-      "html": "<span class=\"ds-tag\" style=\"background:#17786d;color:#fff\">EC Core</span>",
-      "css": ".ds-tag{font-family:'Sofia Sans Condensed Variable','Arial Narrow',sans-serif;font-size:1.0625rem;display:inline-block;padding:.4rem .75rem;border-radius:.3rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase}"
+      "refersTo": "zone-web",
+      "description": "The four access zones on the pass.",
+      "html": "<ul class=\"ds-zones\"><li><a class=\"z web\" href=\"#\">Web</a></li><li><a class=\"z ec\" href=\"#\">EC Core</a></li><li><a class=\"z to\" href=\"#\">Time Off</a></li><li><a class=\"z rep\" href=\"#\">Reporting</a></li></ul>",
+      "css": ".ds-zones{font-family:'Sofia Sans Condensed Variable', 'Arial Narrow', sans-serif;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.6rem;list-style:none;margin:0;padding:0;max-width:26rem}.z{display:flex;align-items:flex-end;min-height:3.5rem;padding:.55rem .7rem;border:3px solid #111214;font-weight:900;font-size:1.15rem;letter-spacing:.04em;text-transform:uppercase;text-decoration:none;box-shadow:3px 3px 0 #111214;transition:translate .12s ease-out,box-shadow .12s ease-out}.z:hover{translate:-2px -2px;box-shadow:5px 5px 0 #111214}.z:focus-visible{outline:3px solid #4f6bed;outline-offset:3px}.web{background:#111214;color:#fff}.ec{background:#0f8f80;color:#fff}.to{background:#ffc93c;color:#111214}.rep{background:#4f6bed;color:#fff}"
     },
     {
-      "name": "Hanging Badge",
+      "name": "Zone Card",
       "kind": "card",
+      "refersTo": "card",
+      "description": "An Access row: tag plus what the zone covers.",
+      "html": "<div class=\"ds-card\"><span class=\"ds-tag\">EC Core</span><p>Employee Central foundation objects, employee data, and position management.</p></div>",
+      "css": ".ds-card{font-family:'Sofia Sans Condensed Variable', 'Arial Narrow', sans-serif;background:#fff;color:#111214;border:3px solid #111214;box-shadow:6px 6px 0 #111214;padding:1.25rem;display:grid;gap:.9rem;max-width:28rem}.ds-card p{margin:0;font-weight:600;font-size:1.1rem}.ds-tag{justify-self:start;border:3px solid #111214;padding:.35rem .7rem;font-weight:900;letter-spacing:.06em;text-transform:uppercase;background:#0f8f80;color:#fff}"
+    },
+    {
+      "name": "Section Heading",
+      "kind": "custom",
+      "refersTo": "section-heading",
+      "description": "Paper type in an ink block.",
+      "html": "<h2 class=\"ds-display\">Certified</h2>",
+      "css": ".ds-display{font-family:'Sofia Sans Condensed Variable', 'Arial Narrow', sans-serif;display:inline-block;margin:0;font-size:3.5rem;font-weight:900;line-height:.9;letter-spacing:-.02em;text-transform:uppercase;background:#111214;color:#f1efe9;padding:.15em .3em .05em}"
+    },
+    {
+      "name": "Hanging Pass",
+      "kind": "custom",
       "refersTo": "badge",
-      "description": "The one lifted object: dark PVC card with graphite slot, foil strip, name and position.",
-      "html": "<article class=\"ds-badge\"><div class=\"ds-slot\"></div><div class=\"ds-foil\"></div><h1 class=\"ds-name\">Evan Kline<br>Mores</h1><p class=\"ds-pos\">Web developer \u00b7 SAP SuccessFactors</p></article>",
-      "css": ".ds-badge{font-family:'Sofia Sans Condensed Variable','Arial Narrow',sans-serif;font-size:1.0625rem;max-width:30rem;background:var(--pvc,#1d2024);color:var(--ink,#ecedee);border-radius:1.4rem;padding:1.25rem 1.75rem 1.5rem;box-shadow:0 1.5rem 3rem -1rem rgb(0 0 0/.55),0 .25rem .5rem rgb(0 0 0/.3)}.ds-slot{width:6.5rem;height:1rem;margin:0 auto;border-radius:999px;background:var(--ground,#121416);box-shadow:inset 0 2px 3px rgb(0 0 0/.35)}.ds-foil{height:1.75rem;margin:1rem -1.75rem 1.25rem;background:linear-gradient(100deg,transparent 16%,rgb(255 255 255/.95) 30%,transparent 44%),linear-gradient(101deg,#56c6ff,#a983ff 18%,#ff7cc4 34%,#ffd36b 50%,#6fe3b0 66%,#56c6ff 82%,#a983ff);background-size:100% 100%,260% 100%;background-position:0 0,30% 0}.ds-name{margin:0;font-size:3.5rem;font-weight:850;line-height:.86;letter-spacing:-.02em;text-transform:uppercase}.ds-pos{margin:.75rem 0 0;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-2,#a7adb4)}"
+      "description": "The signature: a tilted white pass on a black strap.",
+      "html": "<div class=\"ds-hang\"><div class=\"ds-strapdrop\"></div><article class=\"ds-pass\"><div class=\"ds-slot\"></div><h1>Evan Kline<br>Mores</h1><p>Web developer · SAP SuccessFactors</p></article></div>",
+      "css": ".ds-hang{font-family:'Sofia Sans Condensed Variable', 'Arial Narrow', sans-serif;position:relative;padding-top:4rem;max-width:24rem}.ds-strapdrop{position:absolute;left:50%;top:0;translate:-50% 0;width:3.25rem;height:5rem;background:#111214}.ds-strapdrop::after{content:'';position:absolute;left:50%;bottom:-1.25rem;translate:-50% 0;width:4.5rem;height:1.75rem;background:#ffc93c;border:3px solid #111214}.ds-pass{position:relative;background:#fff;color:#111214;border:4px solid #111214;box-shadow:8px 8px 0 #111214;padding:1.5rem 1.5rem 1.25rem;rotate:-2deg;transform-origin:50% 0}.ds-slot{width:6rem;height:1rem;margin:0 auto 1.25rem;border:3px solid #111214;border-radius:999px;background:#f1efe9}.ds-pass h1{margin:0;font-size:3rem;font-weight:900;line-height:.84;letter-spacing:-.02em;text-transform:uppercase}.ds-pass p{display:inline-block;margin:.85rem 0 0;font-weight:800;letter-spacing:.1em;text-transform:uppercase;background:#111214;color:#fff;padding:.3rem .6rem}"
     }
   ],
   "narrative": {
-    "northStar": "The Staff ID Badge",
-    "overview": "The whole site is one staff badge hanging from a lanyard. The page is a graphite ground; a single dark printed-PVC card, one step lighter than the ground, hangs from a steel clip on a slate woven strap printed in teal, and the back of the site is the reverse of that card, a second sheet of the same PVC rising from the bottom with rounded top corners. Four access-zone bands (light ink, teal, muted gold, slate) are the only spot colours; everything else is light ink on graphite or light ink on PVC. The mood is calm and enterprise: dark, low-chroma, with one teal voice.\n\nHierarchy comes from one condensed face pushed through weight and tracking: tight, heavy, near-solid display lines against wide-tracked uppercase labels, the way a badge printer sets a name over a job title. States are drawn in line, not hue: a double rule on hover, a dashed punch outline on focus and disabled, a solid rule when current. Motion is physical and rare: the badge swings once from its clip and settles, and the foil strip catches light under the pointer.",
+    "northStar": "The Laminated Access Pass",
+    "overview": "The page is a printed visitor pass for a building where web development and SAP SuccessFactors work side by side: ink on paper, four saturated zone colours, and a pass hanging from a black strap at a slight tilt. The feel is loud, tactile, honest. Every element is a boxed object with a hard edge and a physical offset shadow; nothing is soft, blurred or gradient-lit. Hierarchy comes from scale, ink fills and colour blocks, not greys.",
     "keyCharacteristics": [
-      "Dark graphite ground (color-scheme: dark); light ink and dark PVC carry everything else, teal is the one accent.",
-      "One printed card object with real material cues: punched slot, steel clip, soft hanging shadow, foil strip, barcode.",
-      "One condensed variable face, two size families (display, text), ranked by weight 450 to 850 and tracking -0.02em to 0.3em.",
-      "Line-form states only; colour never signals state alone.",
-      "Exactly one reflective accent."
+      "Paper ground with ink borders, text and shadows",
+      "3–4px solid borders, square corners",
+      "Zero-blur offset shadows that grow on hover and collapse on press",
+      "Four zone colours used as solid blocks",
+      "One condensed typeface, uppercase for labels"
     ],
     "rules": [
       {
-        "name": "The Four Zones Rule",
-        "body": "Light ink, teal, gold and slate belong to the four access zones and nothing else. Each zone keeps its colour wherever it appears (band on the badge, tag on the back).",
+        "name": "The Ink-Only Shadow Rule",
+        "body": "Shadows are solid ink (or Reporting Blue on the current nav item). Never coloured or translucent.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Zone Colour Rule",
+        "body": "The four zone colours belong to the four zones and their matching certifications only.",
         "section": "colors"
       },
       {
-        "name": "The Drenched Ground Rule",
-        "body": "Graphite is the field the badge hangs in, and dark PVC is the only lift above it. Text on graphite or PVC is light ink or faded ink; text on the light surfaces (teal accent, gold zone) is graphite.",
+        "name": "The No-Grey Rule",
+        "body": "No grey text tiers; secondary information is smaller or lighter in weight.",
         "section": "colors"
       },
       {
-        "name": "The One Teal Voice Rule",
-        "body": "Strap Teal marks the strap, the lanyard, Copy email, selection and caret. It never becomes running text or a content rule, and never signals state by hue; the strap's line-form states simply draw in its teal.",
-        "section": "colors"
-      },
-      {
-        "name": "The Two Sizes Rule",
-        "body": "Type lives at display scale or text scale (1.0625rem). There is no intermediate headline or title step; rank inside a size family is by weight and tracking.",
+        "name": "The Stamp Rule",
+        "body": "Anything that labels, navigates or acts is uppercase at 800–900 with positive tracking.",
         "section": "typography"
       },
       {
-        "name": "The Tight-Over-Wide Rule",
-        "body": "Display lines set tight (negative tracking, sub-1 line-height); labels set wide (0.06em and up, uppercase). Never mix the two on one line.",
-        "section": "typography"
-      },
-      {
-        "name": "The One Card Rule",
-        "body": "Only the badge casts a shadow. Content blocks are ruled, never carded.",
+        "name": "The Press Rule",
+        "body": "Pressable objects lift 1–2px on hover with a larger shadow and sink into it on press; 0.12s ease-out; off under reduced motion.",
         "section": "elevation"
       }
     ],
     "dos": [
-      "**Do** signal link, strap and zone state with line form: double rule on hover, dashed outline on focus and disabled, solid rule when current. Filled buttons hover by inverting fill and text.",
-      "**Do** keep text at display scale or 1.0625rem and rank by weight (450\u2013850) and tracking.",
-      "**Do** keep each zone colour bound to its zone, wherever the zone appears.",
-      "**Do** give every motion a reduced-motion off switch.",
-      "**Do** build lists as ruled rows (2px light-ink top rule, 1px hairlines).",
-      "**Do** take every colour from the :root tokens; the theme is dark (color-scheme: dark, theme-color graphite)."
+      "Do give every new container a 3px ink border and a zero-blur ink shadow from the vocabulary.",
+      "Do keep zone colours tied to their zones.",
+      "Do set labels, buttons and nav in uppercase 800–900 with positive tracking.",
+      "Do follow the Press Rule with a reduced-motion fallback.",
+      "Do always show the full name, Evan Kline Mores, and keep the email assembled in the browser.",
+      "Do theme focus with the 3px Reporting Blue outline."
     ],
     "donts": [
-      "**Don't** add a second reflective or gradient surface; the foil strip is the only one.",
-      "**Don't** add a second shadowed object; only the badge hangs.",
-      "**Don't** signal hover, focus or current by a hue change alone.",
-      "**Don't** introduce a second typeface or intermediate heading sizes.",
-      "**Don't** use the zone colours for decoration, buttons or status.",
-      "**Don't** spend Strap Teal beyond the strap, lanyard, Copy email, selection and caret."
+      "Don't add rounded corners, gradients, blur, glass, or soft and coloured shadows.",
+      "Don't use grey text tiers.",
+      "Don't tilt anything other than the hanging pass.",
+      "Don't invent client logos, metrics, testimonials, or a photo slot.",
+      "Don't bring back the dark Graphite & Teal palette."
     ]
   }
 }
