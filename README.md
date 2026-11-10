@@ -19,6 +19,8 @@ The form posts to [Web3Forms](https://web3forms.com). Copy `.env.example` to `.e
 PUBLIC_WEB3FORMS_KEY=your-access-key
 ```
 
+A production build (`npm run build`) fails without this key, so the site never ships without its contact form. The dev server still runs without it and shows Copy email and LinkedIn instead.
+
 Without a key, the page shows a "Get in touch" block (Copy email + LinkedIn) instead of the form. The email address is never written as plain text in the page source.
 
 ## Project files

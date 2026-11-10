@@ -6,7 +6,7 @@ colors:
   card: "#ffffff"
   ink: "#111214"
   web: "#111214"
-  ec: "#0f8f80"
+  ec: "#0c7f72"
   to: "#ffc93c"
   rep: "#4f6bed"
   err: "#b3261e"
@@ -152,8 +152,8 @@ A paper-and-ink base with four solid zone colours; yellow is the voice of action
 - **Pass Yellow** (#ffc93c): The action colour. Copy email and Send buttons, the highlight behind "SAP SuccessFactors." in the headline, the Time Off zone, nav hover, the strap clasp, and the closing "If found" panel. On a yellow ground the button inverts to ink with yellow text.
 
 ### Secondary
-- **EC Teal** (#0f8f80): The EC Core zone and its tag, and the left edge of the SuccessFactors certification row. White on EC Teal is about 4:1, so text on it stays large and heavy (the 900-weight zone label at 1.15rem or more).
-- **Reporting Blue** (#4f6bed): The Reporting zone, the left edge of the Generative AI certification row, the current nav item's offset shadow, and every focus outline.
+- **EC Teal** (#0c7f72): The EC Core zone and its tag, and the left edge of the SuccessFactors certification row. White on EC Teal is 4.9:1, so it passes AA at any size (it was #0f8f80 at 4:1, which failed at the zone label's 18px).
+- **Reporting Blue** (#4f6bed): The Reporting zone, the left edge of the Generative AI certification row, the current nav item's offset shadow, and every focus outline except on the badge zones, where the outline is Press Ink so it shows on the blue Reporting zone too.
 
 ### Neutral
 - **Pass Paper** (#f1efe9): Page ground, the strap bar, form field fill, and the text on inked section headings.
@@ -250,7 +250,7 @@ A sticky Pass Paper bar with a 3px ink bottom rule. On the left, the name is an 
 Each template in Projects is a white pass with a 4px ink border and the Pass shadow: the preview (a still image at every size: for Coursebook, a desktop, tablet and phone collage on paper) on the left (1.4fr) and the details on the right from 1024px up, stacked below that. The details hold the name (uppercase 900), a tilted yellow category tag, boxed stack chips, square-bullet features, a two-cell Screens / Last updated box, and a yellow Open live demo button (Open demo for a local demo). When there's no public demo, a dashed "Live demo coming soon" box replaces the button instead of a dead link.
 
 ### Signature: the hanging pass
-A 3.25rem black strap with a yellow clasp drops into a white pass tilted -2deg with the Pass shadow. The pass holds a hole-punch slot, the stacked name, an inked position line, the four zones, the contact block and a barcode drawn from the name's letters. It's the only tilted object on the page; don't tilt anything else.
+A 3.25rem black strap with a yellow clasp drops into a white pass tilted -2deg with the Pass shadow. The pass holds a hole-punch slot, the stacked name, an inked position line, an availability line ("Open to full-time roles and freelance work", led by a small inked square in the success green), the four zones, the contact block and a barcode drawn from the name's letters. It's the only tilted object on the page; don't tilt anything else.
 
 ## Do's and Don'ts
 
@@ -260,7 +260,7 @@ A 3.25rem black strap with a yellow clasp drops into a white pass tilted -2deg w
 - **Do** set labels, buttons and navigation in uppercase 800–900 Sofia Sans Condensed with positive tracking.
 - **Do** make pressable things follow the Press Rule, with a reduced-motion fallback.
 - **Do** always show the full name, Evan Kline Mores, and keep the email assembled in the browser (never plain text).
-- **Do** theme focus with the 3px Reporting Blue outline.
+- **Do** theme focus with the 3px Reporting Blue outline (Press Ink on the badge zones).
 
 ### Don't:
 - **Don't** add rounded corners, gradients, blur, glass, or soft and coloured shadows.

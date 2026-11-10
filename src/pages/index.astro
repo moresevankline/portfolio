@@ -3,6 +3,8 @@ import '@fontsource-variable/sofia-sans-condensed';
 import { projects } from '../data/projects';
 
 const formKey = import.meta.env.PUBLIC_WEB3FORMS_KEY ?? '';
+// Without the key the contact form is left out, so a production build stops instead of shipping a page with no form.
+if (import.meta.env.PROD && !formKey) throw new Error('PUBLIC_WEB3FORMS_KEY is not set. Add it to .env (or the host\'s environment) so the contact form ships.');
 // Contact address as shifted char codes; decoded only when Copy email is clicked.
 const mailCodes = [...'ekmores28@gmail.com'].map((c) => c.charCodeAt(0) + 7).join('.');
 
@@ -40,6 +42,7 @@ const barWidth = x;
   <meta name="description" content="Evan Kline Mores is a web developer who knows how HR runs on SAP SuccessFactors: Employee Central Core, Time Off, and Reporting." />
   <meta name="theme-color" content="#f1efe9" />
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <noscript><style>[data-copy] { display: none; }</style></noscript>
 </head>
 <body>
   <a class="skip" href="#message">Skip to contact</a>
@@ -81,6 +84,7 @@ const barWidth = x;
           <div class="nb-slot" aria-hidden="true"></div>
           <h1 id="nb-name" class="nb-name">Evan Kline<br />Mores</h1>
           <p class="nb-position">Web developer · SAP SuccessFactors</p>
+          <p class="nb-open">Open to full-time roles and freelance work</p>
           <ul class="nb-zones" aria-label="Access zones">
             {zones.map((z) => (<li><a class={`nb-zone nb-${z.tone === 'ink' ? 'web' : z.tone}`} href={`#${z.id}`} data-zone={z.id}>{z.name}</a></li>))}
           </ul>
@@ -102,6 +106,7 @@ const barWidth = x;
               <a class="nb-link" href="https://www.linkedin.com/in/evanklinemores" target="_blank" rel="noopener">LinkedIn <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 3h8v8M13 3 3 13" fill="none" stroke="currentColor" stroke-width="2.5" /></svg><span class="sr">(opens in a new tab)</span></a>
             </div>
             <p class="copy-status" role="status" aria-live="polite"></p>
+            <noscript><p class="copy-status">Copying the email needs JavaScript. Reach Evan Kline Mores on LinkedIn instead.</p></noscript>
           </div>
           )}
           <svg class="nb-barcode" viewBox={`0 0 ${barWidth} 40`} preserveAspectRatio="none" aria-hidden="true">
@@ -177,6 +182,7 @@ const barWidth = x;
         {formKey && <a class="nb-link" href="#message">Send a message</a>}
       </div>
       <p class="copy-status" role="status" aria-live="polite"></p>
+            <noscript><p class="copy-status">Copying the email needs JavaScript. Reach Evan Kline Mores on LinkedIn instead.</p></noscript>
       <p class="nb-small">This badge is not transferable. Web development, SAP SuccessFactors Employee Central Core, Time Off, and Reporting. Certifications verified on Credly. © {new Date().getFullYear()} Evan Kline Mores.</p>
     </section>
   </main>
@@ -225,6 +231,11 @@ const barWidth = x;
       try {
         await navigator.clipboard.writeText(address);
         copyStatus.textContent = `Copied ${address}`;
+        // The button itself confirms, so the change shows where the visitor is looking.
+        copyBtn.style.minWidth = `${copyBtn.offsetWidth}px`;
+        copyBtn.innerHTML = 'Copied <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2.5 8.5 6.5 12.5 13.5 4" fill="none" stroke="currentColor" stroke-width="3" /></svg>';
+        clearTimeout(Number(copyBtn.dataset.reset));
+        copyBtn.dataset.reset = String(setTimeout(() => { copyBtn.textContent = 'Copy email'; }, 2500));
       } catch {
         copyStatus.textContent = `Copy this address: ${address}`;
       }
@@ -277,7 +288,7 @@ const barWidth = x;
     --card: #ffffff;
     --ink: #111214;
     --web: #111214;
-    --ec: #0f8f80;
+    --ec: #0c7f72;
     --to: #ffc93c;
     --rep: #4f6bed;
     --err: #b3261e;
@@ -381,7 +392,7 @@ const barWidth = x;
   .nb-lede { font-size: clamp(3rem, 1.8rem + 4.4vw, 6rem); font-weight: 900; line-height: 0.9; letter-spacing: -0.02em; text-transform: uppercase; max-width: 12ch; text-wrap: balance; }
   .nb-lede mark { background: var(--to); color: var(--ink); padding: 0 0.12em; box-decoration-break: clone; -webkit-box-decoration-break: clone; }
   .nb-proof { font-size: 1.2rem; font-weight: 700; max-width: 34ch; border: calc(3 * var(--px)) solid var(--ink); background: var(--card); padding: 1rem 1.25rem; box-shadow: calc(5 * var(--px)) calc(5 * var(--px)) 0 var(--ink); }
-  .nb-proof a { font-weight: 900; text-decoration-thickness: calc(3 * var(--px)); white-space: nowrap; }
+  .nb-proof a { font-weight: 900; text-decoration-thickness: calc(3 * var(--px)); white-space: nowrap; padding-block: 0.7rem; }
   .nb-hang { position: relative; padding-top: 4rem; }
   .nb-strap { position: absolute; left: 50%; top: 0; translate: -50% 0; width: 3.25rem; height: 5rem; background: var(--ink); border: calc(3 * var(--px)) solid var(--ink); }
   .nb-strap::after { content: ""; position: absolute; left: 50%; bottom: -1.25rem; translate: -50% 0; width: 4.5rem; height: 1.75rem; background: var(--to); border: calc(3 * var(--px)) solid var(--ink); }
@@ -389,8 +400,11 @@ const barWidth = x;
   .nb-slot { width: 6rem; height: 1rem; margin: 0 auto 1.25rem; border: calc(3 * var(--px)) solid var(--ink); border-radius: calc(999 * var(--px)); background: var(--paper); }
   .nb-name { font-size: clamp(3rem, 2rem + 3.4vw, 5rem); font-weight: 900; line-height: 0.84; letter-spacing: -0.02em; text-transform: uppercase; }
   .nb-position { margin-top: 0.85rem; display: inline-block; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; background: var(--ink); color: var(--card); padding: 0.3rem 0.6rem; }
+  .nb-open { margin-top: 0.6rem; display: flex; align-items: center; gap: 0.55rem; font-weight: 800; }
+  .nb-open::before { content: ""; flex: none; width: 0.8rem; height: 0.8rem; background: var(--ok); border: calc(2 * var(--px)) solid var(--ink); }
   .nb-zones { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.6rem; margin-top: 1.25rem; }
   .nb-zone { display: flex; align-items: flex-end; min-height: 3.5rem; padding: 0.55rem 0.7rem; border: calc(3 * var(--px)) solid var(--ink); font-weight: 900; font-size: 1.15rem; letter-spacing: 0.04em; text-transform: uppercase; text-decoration: none; box-shadow: calc(3 * var(--px)) calc(3 * var(--px)) 0 var(--ink); transition: translate .12s ease-out, box-shadow .12s ease-out; }
+  .nb-main .nb-zone:focus-visible { outline-color: var(--ink); }
   .nb-zone:hover { translate: calc(-2 * var(--px)) calc(-2 * var(--px)); box-shadow: calc(5 * var(--px)) calc(5 * var(--px)) 0 var(--ink); }
   .nb-web { background: var(--web); color: #fff; }
   .nb-ec { background: var(--ec); color: #fff; }
@@ -401,8 +415,9 @@ const barWidth = x;
   .nb-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 0.9rem 1.25rem; }
   .nb-btn { font: inherit; font-weight: 900; letter-spacing: 0.12em; text-transform: uppercase; background: var(--to); color: var(--ink); border: calc(3 * var(--px)) solid var(--ink); padding: 0.75rem 1.4rem; cursor: pointer; box-shadow: calc(4 * var(--px)) calc(4 * var(--px)) 0 var(--ink); transition: translate .12s ease-out, box-shadow .12s ease-out; }
   .nb-btn:hover { translate: calc(-2 * var(--px)) calc(-2 * var(--px)); box-shadow: calc(6 * var(--px)) calc(6 * var(--px)) 0 var(--ink); }
+  .nb-btn svg { width: 0.9em; height: 0.9em; margin-left: 0.4rem; vertical-align: -0.05em; }
   .nb-btn:active { translate: calc(4 * var(--px)) calc(4 * var(--px)); box-shadow: 0 0 0 var(--ink); }
-  .nb-link { display: inline-flex; align-items: center; gap: 0.45rem; font-weight: 900; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; border-bottom: calc(4 * var(--px)) solid currentColor; padding: 0.3rem 0; }
+  .nb-link { display: inline-flex; align-items: center; gap: 0.45rem; font-weight: 900; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; border-bottom: calc(4 * var(--px)) solid currentColor; padding: 0.3rem 0; min-height: 2.75rem; }
   .nb-link svg { width: 0.85em; height: 0.85em; }
   .nb-field { display: grid; gap: 0.3rem; font-weight: 700; }
   .nb-field input, .nb-field textarea { font: inherit; color: var(--ink); background: var(--paper); border: calc(3 * var(--px)) solid var(--ink); padding: 0.6rem 0.75rem; resize: vertical; }
