@@ -189,7 +189,7 @@ A paper-and-ink base with four solid zone colours; yellow is the voice of action
 
 ## Layout
 
-A single page with a sticky strap (3.5rem) over one content column. The column uses one horizontal gutter, `clamp(1rem, 4vw, 4rem)`, from the strap to the footer, so the headline, section headings and cards share one left edge.
+A single page with a sticky strap (3.5rem) over one content column. The layout is designed at 1440px. Wider screens show the same composition scaled up, like zoom: above 1440px, `--px` becomes `100vw / 1440` and the root font size `100vw / 90`, so every pixel value (borders, shadows, offsets, written as `calc(N * var(--px))`), every rem size and every vw size grows by the same factor (a 2560px screen is 1440 at about 178%). Write new pixel values as `calc(N * var(--px))` so they keep scaling. The column uses one horizontal gutter, `clamp(1rem, 4vw, 4rem)`, from the strap to the footer, so the headline, section headings and cards share one left edge.
 
 - **Front (≥1101px):** Two columns, `minmax(0, 1fr) minmax(0, 30rem)`, with a `clamp(2rem, 6vw, 6rem)` gap and a minimum height of `calc(100svh - 7rem)`. The lede and proof box sit on the left, centred vertically; the hanging badge sits on the right.
 - **Front (≤1100px):** One column, with the badge below the lede. The strap keeps the name on the left and the links grouped on the right.
