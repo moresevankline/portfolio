@@ -17,24 +17,23 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    // Placeholder entry: replace the name, stack, features, screen count and preview with the real template's.
     slug: 'coursebook-lms',
     name: 'Coursebook',
     category: 'LMS',
-    stack: ['Node.js', 'Vanilla JS', 'PostgreSQL', 'Supabase Auth', 'Vercel'],
+    stack: ['Node.js', 'Vanilla JS', 'PostgreSQL', 'Supabase', 'Drizzle ORM', 'Vercel'],
     preview: {
       src: '/projects/coursebook.jpg',
       alt: 'Coursebook on a desktop browser, a tablet and a phone: the student overview, the course list and the training schedule',
     },
     demoUrl: '/demos/coursebook/index.html',
     features: [
-      'Invite-only sign-in with email codes and admin approval',
-      'Courses, modules and lessons with video and files',
-      'Per-student progress with Continue learning',
-      'Homework hand-in with staff review and feedback',
-      'Live session schedule and recordings with transcripts',
+      'Invite-only email-code sign-in with admin approval and roles',
+      'Courses with modules, rich-text lessons, video, files, quizzes and per-student progress',
+      'Homework hand-in with human review and optional AI-drafted feedback',
+      'Live training schedule and recordings with searchable transcripts',
+      'Optional AI assistant that answers only from approved course material',
     ],
-    screens: 14,
-    updated: '2026-11-09',
+    screens: 21,
+    updated: '2026-11-10',
   },
 ];
